@@ -434,3 +434,85 @@ body {
 .shop{ margin-top: 48px; }
 .site-footer{ margin-top: 72px; }
 h1,h2,h3{ font-family: "Playfair Display", serif; }
+/* ===== Palette luxe ===== */
+:root{
+  --beige: #f4eee7;        /* fond contenu */
+  --black: #0C0B0A;        /* noir doux */
+  --text:  #111;           /* texte principal */
+  --white: #fff;
+  --gold:  #BFA77A;        /* or mat */
+  --gold-d:#a88f61;        /* or hover */
+}
+
+/* Contenu global en beige (on garde) */
+body{ background: var(--beige); color: var(--text); }
+
+/* ===== Hero noir luxe ===== */
+.hero.hero--dark{
+  background: var(--black);
+  color: var(--white);
+  padding: 160px 20px 100px;
+}
+.hero.hero--dark .logo{
+  width: clamp(220px,28vw,420px);
+  margin: 0 auto 26px;
+}
+.hero.hero--dark .hero-subtitle{ opacity:.85; }
+.hero.hero--dark .cta{
+  background: var(--gold);
+  color: var(--black);
+  padding: 14px 26px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.hero.hero--dark .cta:hover{
+  background: var(--black);
+  color: var(--gold);
+  border: 2px solid var(--gold);
+}
+
+/* ===== Cartes produits blanches + contour or ===== */
+.product{
+  background: var(--white);
+  color: var(--text);
+  border: 2px solid var(--gold);
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.06);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.product:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+}
+.product h3{ color: var(--text); }
+.price{ color: var(--text); font-weight: 700; }
+
+/* Bouton produit */
+.product .btn{
+  background: var(--gold);
+  color: var(--black);
+  border-radius: 10px;
+  font-weight: 700;
+}
+.product .btn:hover{ background: var(--gold-d); }
+
+/* Petit zoom élégant sur l’image */
+.product img{ transition: transform .35s ease; }
+.product:hover img{ transform: scale(1.03); }
+
+/* ===== Footer noir luxe ===== */
+.site-footer.site-footer--dark{
+  background: var(--black);
+  color: var(--white);
+  padding: 36px 16px;
+}
+.site-footer.site-footer--dark .contact-links a{
+  color: var(--white);
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: .25s;
+}
+.site-footer.site-footer--dark .contact-links a:hover{
+  background: rgba(255,255,255,.08);
+}
+.site-footer.site-footer--dark .tiny{ opacity:.65; }
