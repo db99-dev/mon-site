@@ -516,3 +516,6 @@ body{ background: var(--beige); color: var(--text); }
   background: rgba(255,255,255,.08);
 }
 .site-footer.site-footer--dark .tiny{ opacity:.65; }
+body{ font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+h1,h2,h3{ font-family: "Playfair Display", serif; letter-spacing:.2px; }
+h1{ font-weight:600; }
