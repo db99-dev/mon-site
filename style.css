@@ -228,4 +228,34 @@ button, a.btn {
 button:hover, a.btn:hover {
   background: #9b8269;
   transition: 0.3s;
+}/* Collections */
+.collections{
+  max-width: 1100px;
+  margin: 30px auto 10px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px,1fr));
+  gap: 20px;
 }
+.collections .col{
+  background: rgba(255,255,255,0.08);
+  border: 1px solid #d7cec3;
+  border-radius: 16px;
+  padding: 22px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .2s, background .2s, border-color .2s;
+  backdrop-filter: blur(2px);
+}
+.collections .col:hover{
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.18);
+  border-color: #cbb9a4;
+}
+.collections h3{ margin:0 0 6px; font-size:22px; }
+.collections p{ margin:0; opacity:.9; }
+/* responsive */
+@media (max-width: 900px){
+  .collections{ grid-template-columns: 1fr; }
+}
+
