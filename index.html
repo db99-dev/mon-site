@@ -26,7 +26,18 @@
     <p>Détails raffinés, intemporels.</p>
   </a>
 </section>
-
+  <script>
+  const els = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
+    }, {threshold: 0.12});
+    els.forEach(el=>io.observe(el));
+  }else{
+    els.forEach(el=>el.classList.add('in'));
+  }
+</script>
+<button id="backTop" aria-label="Revenir en haut">↑</button>
 <body>
   <header class="topbar">
   <a href="#" class="brand">NORÉA</a>
