@@ -639,3 +639,12 @@ html{ scroll-behavior:smooth; }
   .reveal{ opacity:0; transform: translateY(10px); }
   .reveal.in{ opacity:1; transform:none; transition: opacity .6s ease, transform .6s ease; }
 }
+#backTop{
+  position:fixed; right:16px; bottom:16px; z-index:70;
+  width:44px; height:44px; border-radius:50%;
+  background:#0C0B0A; color:#F8F5EF; border:1px solid rgba(255,255,255,.15);
+  display:none; align-items:center; justify-content:center;
+  font-size:18px; cursor:pointer; transition:.25s;
+  box-shadow:0 6px 16px rgba(0,0,0,.25);
+}
+#backTop:hover{ transform: translateY(-2px); }
