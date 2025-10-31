@@ -258,4 +258,15 @@ button:hover, a.btn:hover {
 @media (max-width: 900px){
   .collections{ grid-template-columns: 1fr; }
 }
-
+:root{
+  --beige: #f5efe6;     /* beige lin doux */
+  --text:  #2a2a2a;
+  --accent:#b59a7d;     /* or doux pour les boutons */
+}
+body{
+  background: var(--beige);
+  color: var(--text);
+  margin:0; padding:0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  text-align:center;
+}
