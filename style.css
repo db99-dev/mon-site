@@ -165,11 +165,10 @@ body {
   text-align: center;
 }
 
-/* Logo */
 .logo{
-  width: 180px;   /* avant 120 → plus visible */
+  width: 460px; /* ← TAILLE AGRANDIE */
   display:block;
-  margin: 20px auto 0;
+  margin: 0 auto 40px; /* plus d'espace */
 }
 
 /* Titres */
@@ -279,9 +278,10 @@ body {
 }
 
 /* Hero Section */
-.hero {
-  text-align: center;
-  padding: 80px 20px;
+.hero{
+  text-align:center;
+  padding: 160px 20px 100px; /* plus d'air = plus luxe */
+  background:#f4eee7; /* beige luxe */
 }
 
 .logo {
@@ -326,9 +326,9 @@ body {
 }
 
 .logo{
-  width: 320px; /* ← TAILLE DU LOGO (tu peux augmenter) */
+  width: 460px; /* ← TAILLE DU LOGO (tu peux augmenter) */
   display:block;
-  margin: 0 auto 20px;
+  margin: 0 auto 40px;
 }
 
 .hero-subtitle{
