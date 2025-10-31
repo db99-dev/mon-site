@@ -536,3 +536,60 @@ section{ padding: 56px 0; }
   font-size: clamp(28px, 3vw, 38px);
   margin-bottom: 28px;
 }
+/* Cartes : filet or fin, coins doux, ombre subtile */
+.product{
+  border: 1px solid var(--gold);
+  border-radius: 14px;
+  background:#fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,.04);
+  transition: transform .25s ease, box-shadow .25s ease;
+  padding-bottom: 22px; /* un peu d'air sous le bouton */
+}
+.product:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.06);
+}
+
+/* Images harmonisées */
+.product img{
+  width:100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Nom produit + prix : hiérarchie claire */
+.product h3{
+  font-size: 20px;
+  margin: 12px 16px 4px;
+}
+.price{
+  margin: 0 16px 12px;
+  font-weight: 600;
+  letter-spacing:.2px;
+}
+
+/* Bouton : or plein → outline or au hover (luxe) */
+.product .btn{
+  background: var(--gold);
+  color: var(--black);
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 12px 18px;
+  margin: 0 16px;
+  transition: .25s;
+  border: 1px solid var(--gold);
+}
+.product .btn:hover{
+  background: transparent;
+  color: var(--gold);
+}
+/* Ligne or fine pour séparer des zones */
+.hr-gold{
+  height:1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 40px auto;
+  width: min(480px, 60%);
+  opacity:.7;
+  border-radius: 99px;
+}
