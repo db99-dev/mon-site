@@ -593,3 +593,29 @@ section{ padding: 56px 0; }
   opacity:.7;
   border-radius: 99px;
 }
+.site-footer .contact-links{
+  text-align:center;
+  letter-spacing:.3px;
+}
+.site-footer .contact-links a{
+  text-transform: none;    /* pas de caps criardes */
+  opacity:.95;
+}
+.site-footer .contact-links a:hover{ opacity:1; }
+.site-footer .tiny{
+  font-size:13px;
+  letter-spacing:.2px;
+}
+.services .card{
+  border:1px solid #e8dfd2;
+  box-shadow:none;
+  position:relative;
+}
+.services .card::after{
+  content:"";
+  position:absolute; inset:0;
+  border:1px solid var(--gold);
+  border-radius:12px;
+  opacity:.25;
+  pointer-events:none;
+}
