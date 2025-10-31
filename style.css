@@ -619,3 +619,19 @@ section{ padding: 56px 0; }
   opacity:.25;
   pointer-events:none;
 }
+html{ scroll-behavior:smooth; }
+
+.topbar{
+  position:sticky; top:0; z-index:80;
+  display:flex; align-items:center; justify-content:space-between;
+  background:#0C0B0A; color:#F8F5EF;
+  padding:10px 16px; border-bottom:1px solid rgba(255,255,255,.08);
+}
+.topbar .brand{
+  font-family:"Playfair Display", serif; font-weight:600; letter-spacing:.6px;
+  color:#F8F5EF; text-decoration:none; font-size:18px;
+}
+.topbar .nav a{
+  color:#F8F5EF; text-decoration:none; margin-left:18px; opacity:.9; transition:.2s;
+}
+.topbar .nav a:hover{ opacity:1; }
