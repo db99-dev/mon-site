@@ -635,3 +635,7 @@ html{ scroll-behavior:smooth; }
   color:#F8F5EF; text-decoration:none; margin-left:18px; opacity:.9; transition:.2s;
 }
 .topbar .nav a:hover{ opacity:1; }
+@media (prefers-reduced-motion: no-preference){
+  .reveal{ opacity:0; transform: translateY(10px); }
+  .reveal.in{ opacity:1; transform:none; transition: opacity .6s ease, transform .6s ease; }
+}
