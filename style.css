@@ -272,3 +272,48 @@ body{
   font-family: "Helvetica Neue", Arial, sans-serif;
   text-align:center;
 }
+/* Fond beige élégant */
+body {
+  background-color: #f4eee7;
+  color: #111;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.logo {
+  width: 130px; /* ajuste ici */
+  margin-bottom: 15px;
+}
+
+/* Titre */
+.hero-title {
+  font-size: 42px;
+  letter-spacing: 4px;
+  font-weight: 600;
+}
+
+/* Sous-texte */
+.hero-subtitle {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  font-weight: 300;
+}
+
+/* Bouton */
+.cta {
+  background: #111;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.cta:hover {
+  background: #333;
+}
