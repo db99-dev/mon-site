@@ -649,3 +649,13 @@ html{ scroll-behavior:smooth; }
 }
 #backTop:hover{ transform: translateY(-2px); }
 .services .card{ box-shadow: 0 2px 12px rgba(0,0,0,.06) !important; }
+.cart-btn{
+  display:inline-flex; align-items:center; gap:10px;
+  background:#0C0B0A; color:#F8F5EF;
+  border:1px solid rgba(255,255,255,.14);
+  padding:10px 14px; border-radius:999px;
+  font-weight:600; cursor:pointer; transition:.2s;
+}
+.cart-btn:hover{ transform:translateY(-1px); }
+.cart-btn .cart-count{ background:#BFA77A; color:#111; padding:2px 8px; border-radius:999px; }
+.cart-btn .cart-total{ opacity:.85; font-variant-numeric: tabular-nums; }
