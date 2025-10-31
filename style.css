@@ -317,3 +317,37 @@ body {
 .cta:hover {
   background: #333;
 }
+/* ===== HERO + LOGO ===== */
+
+.hero{
+  text-align:center;
+  padding: 120px 20px 60px;
+  background:#f4eee7; /* beige doux */
+}
+
+.logo{
+  width: 320px; /* ← TAILLE DU LOGO (tu peux augmenter) */
+  display:block;
+  margin: 0 auto 20px;
+}
+
+.hero-subtitle{
+  font-size: 18px;
+  font-weight: 300;
+  opacity:.75;
+  margin-bottom: 28px;
+}
+
+.cta{
+  background:#111;
+  color:#fff;
+  padding:14px 28px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:16px;
+}
+
+.cta:hover{
+  background:#333;
+}
