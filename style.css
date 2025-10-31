@@ -404,7 +404,29 @@ body {
   opacity:.6;
   font-size: 13px;
 }
-/* Rythme vertical des sections */
+
 .collections{ margin-top: 24px; }
 .shop{ margin-top: 32px; }
 .hero{ padding-bottom: 80px; }
+
+.product{
+  background:#ffffff;            
+  color:#111;                      
+  border:1px solid #e3d9cc;
+  border-radius:14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+}
+
+.product h3{ color:#111; }
+
+.price{
+  color:#111;                  
+  font-weight:600;
+  margin: 6px 0 12px;
+}
+
+.product .btn{
+  background:#b59a7d;
+  color:#fff;
+}
+.product .btn:hover{ background:#a3886d; }
