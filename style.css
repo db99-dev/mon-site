@@ -164,10 +164,10 @@ body {
 }
 
 /* Logo */
-.logo {
-  width: 120px;
-  margin: 40px auto;
-  display: block;
+.logo{
+  width: 180px;   /* avant 120 → plus visible */
+  display:block;
+  margin: 20px auto 0;
 }
 
 /* Titres */
