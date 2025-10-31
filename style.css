@@ -404,3 +404,7 @@ body {
   opacity:.6;
   font-size: 13px;
 }
+/* Rythme vertical des sections */
+.collections{ margin-top: 24px; }
+.shop{ margin-top: 32px; }
+.hero{ padding-bottom: 80px; }
