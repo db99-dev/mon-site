@@ -93,6 +93,24 @@
   </div>
   <p class="tiny">© NORÉA — Tous droits réservés</p>
 </footer>
-
+  <script>
+  const btn = document.getElementById('backTop');
+  window.addEventListener('scroll', ()=>{
+    btn.style.display = window.scrollY > 480 ? 'flex' : 'none';
+  });
+  btn.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "NORÉA",
+  "url": "https://db99-dev.github.io/mon-site/",
+  "logo": "https://db99-dev.github.io/mon-site/assets/Logo.jpg",
+  "sameAs": [
+    "https://www.instagram.com/ton_compte_si_tu_as"
+  ]
+}
+</script>
 </body>
 </html>
