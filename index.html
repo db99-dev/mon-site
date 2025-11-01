@@ -1,194 +1,216 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
- 
-<script>
-  window.SnipcartSettings = {
-    publicApiKey: 'N2M3N2Y0ZDYtZjY2MC00MjhjLTllY2UtM2U3ZDUzZDI5YjE3NjM4OTc1NDg3NDgyNjUxMzU5',
-    loadStrategy: 'on-user-interaction',
-  };
-
-  (()=>{var c,d;(d=(c=window.SnipcartSettings).version)!=null||(c.version="3.0");var s,S;(S=(s=window.SnipcartSettings).timeoutDuration)!=null||(s.timeoutDuration=2750);var l,p;(p=(l=window.SnipcartSettings).domain)!=null||(l.domain="cdn.snipcart.com");var w,u;(u=(w=window.SnipcartSettings).protocol)!=null||(w.protocol="https");var f=window.SnipcartSettings.version.includes("v3.0.0-ci")||window.SnipcartSettings.version!="3.0"&&window.SnipcartSettings.version.localeCompare("3.4.0",void 0,{numeric:!0,sensitivity:"base"})===-1,m=["focus","mouseover","touchmove","scroll","keydown"];window.LoadSnipcart=o;document.readyState==="loading"?document.addEventListener("DOMContentLoaded",r):r();function r(){window.SnipcartSettings.loadStrategy?window.SnipcartSettings.loadStrategy==="on-user-interaction"&&(m.forEach(t=>document.addEventListener(t,o)),setTimeout(o,window.SnipcartSettings.timeoutDuration)):o()}var a=!1;function o(){if(a)return;a=!0;let t=document.getElementsByTagName("head")[0],e=document.querySelector("#snipcart"),i=document.querySelector(`src[src^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][src$="snipcart.js"]`),n=document.querySelector(`link[href^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][href$="snipcart.css"]`);e||(e=document.createElement("div"),e.id="snipcart",e.setAttribute("hidden","true"),document.body.appendChild(e)),v(e),i||(i=document.createElement("script"),i.src=`${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.js`,i.async=!0,t.appendChild(i)),n||(n=document.createElement("link"),n.rel="stylesheet",n.type="text/css",n.href=`${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.css`,t.prepend(n)),m.forEach(g=>document.removeEventListener(g,o))}function v(t){!f||(t.dataset.apiKey=window.SnipcartSettings.publicApiKey,window.SnipcartSettings.addProductBehavior&&(t.dataset.configAddProductBehavior=window.SnipcartSettings.addProductBehavior),window.SnipcartSettings.modalStyle&&(t.dataset.configModalStyle=window.SnipcartSettings.modalStyle),window.SnipcartSettings.currency&&(t.dataset.currency=window.SnipcartSettings.currency),window.SnipcartSettings.templatesUrl&&(t.dataset.templatesUrl=window.SnipcartSettings.templatesUrl))}})();
-</script>
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-  <meta charset="UTF-8">
-  <title>Mon premier site</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NORÉA — Abayas & Voiles premium</title>
+  <meta name="description" content="NORÉA : Abayas et voiles premium. Élégance, simplicité, raffinement. Livraison rapide, retours 14 jours, paiement sécurisé." />
+
+  <!-- SEO / Open Graph -->
+  <meta property="og:title" content="NORÉA — Abayas & Voiles premium" />
+  <meta property="og:description" content="Élégance, simplicité, raffinement. Livraison 48–72h, paiement sécurisé." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://db99-dev.github.io/mon-site/index.html" />
+  <meta property="og:image" content="https://db99-dev.github.io/mon-site/assets/Logo.jpg" />
+
+  <link rel="preconnect" href="https://cdn.snipcart.com" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Snipcart v3 (panier + paiement) -->
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.css" />
+  <script async src="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.js"></script>
 </head>
-
-<section class="collections">
-  <a class="col" href="#shop">
-    <h3>Abayas</h3>
-    <p>Coupe élégante, tissus premium.</p>
-  </a>
-  <a class="col" href="#shop">
-    <h3>Voiles</h3>
-    <p>Classiques et modernes.</p>
-  </a>
-  <a class="col" href="#shop">
-    <h3>Sacs</h3>
-    <p>Détails raffinés, intemporels.</p>
-  </a>
- <section id="produits" class="grid-products">
-</section>
-</section>
-  <script>
-  const els = document.querySelectorAll('.reveal');
-  if('IntersectionObserver' in window){
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
-    }, {threshold: 0.12});
-    els.forEach(el=>io.observe(el));
-  }else{
-    els.forEach(el=>el.classList.add('in'));
-  }
-</script>
-<button id="backTop" aria-label="Revenir en haut">↑</button>
-  
-<div hidden
-     id="snipcart"
-     data-language="fr"
-     data-currency="EUR"
-     data-config-modal-style="side"
-     data-cart-continue-shopping-url="/mon-site/">
-</div>
 <body>
-  
-  <header class="topbar">
-  <a href="#" class="brand">NORÉA</a>
-  <nav class="nav">
-    <a href="#shop">Produits</a>
-    <a href="#faq">FAQ</a>
-    <a href="#footer">Contact</a>
-  </nav>
-    
-<button class="cart-btn snipcart-checkout" aria-label="Voir mon panier">
-  🛒 <span class="cart-count snipcart-items-count">0</span>
-  <span class="cart-total snipcart-total-price"></span>
-</button>
-</header>
 
-  <header class="hero hero--dark">
-  <img src="assets/Logo.jpg" alt="Logo Norea" class="logo">
-  <p class="hero-subtitle">Élégance – Simplicité – Raffinement</p>
-  <a href="#shop" class="cta">Découvrir la collection</a>
-</header>
+  <!-- ===== Header (sticky) ===== -->
+  <header class="site-header">
+    <div class="wrap">
+      <a href="#" class="brand" aria-label="Accueil NORÉA">NORÉA</a>
 
-  <section class="shop">
-  <h2>Nos produits</h2>
+      <nav class="nav">
+        <a href="#hero">Accueil</a>
+        <a href="#produits">Boutique</a>
+        <a href="#apropos">À propos</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-  <div class="grid">
-    <article class="product">
-  <img src="assets/abaya.PNG" alt="Abaya noire">
-  <h3>Abaya noire</h3>
-  <p class="price">70,00 €</p>
+      <button class="cart-btn snipcart-checkout" aria-label="Ouvrir le panier">
+        🛒 <span class="count snipcart-items-count">0</span>
+        <span class="total"><span class="snipcart-total-price">0</span></span>
+      </button>
+    </div>
+  </header>
 
-  <!-- Bouton Snipcart -->
-  <button
-    class="btn snipcart-add-item"
-    data-item-id="abaya-noire"
-    data-item-name="Abaya noire"
-    data-item-price="70.00"
-    data-item-url="https://db99-dev.github.io/mon-site/index.html"
-    data-item-description="Abaya coupe élégante, tissu premium."
-    data-item-image="https://db99-dev.github.io/mon-site/assets/abaya.PNG"
-    data-item-weight="700"
-    data-item-stackable="true"
-    data-item-custom1-name="Taille"
-    data-item-custom1-options="XS|S|M|L|XL"
-  >
-    Ajouter au panier
-  </button>
+  <!-- ===== Hero ===== -->
+  <section id="hero" class="hero">
+    <div class="wrap">
+      <img class="logo" src="assets/Logo.jpg" alt="Logo NORÉA" width="480" height="140" loading="lazy" />
+      <p class="hero-subtitle">Élégance — Simplicité — Raffinement</p>
+      <a class="btn" href="#produits">Voir la collection</a>
+    </div>
+  </section>
 
-  <!-- Ancien bouton WhatsApp (on le garde pour l'instant) -->
-  <a class="btn" href="https://wa.me/33698234296?text=Salam%20..." target="_blank">
-    Commander sur WhatsApp
-  </a>
-</article>
-</button>
+  <!-- ===== Avantages ===== -->
+  <section class="benefits">
+    <div class="wrap grid-3">
+      <article class="card">
+        <h3>🚚 Livraison 48–72h</h3>
+        <p>Envoi soigné et suivi.</p>
+      </article>
+      <article class="card">
+        <h3>↩️ Retours 14 jours</h3>
+        <p>Échanges ou remboursement.</p>
+      </article>
+      <article class="card">
+        <h3>🔒 Paiement sécurisé</h3>
+        <p>Carte bancaire via Stripe.</p>
+      </article>
+    </div>
+  </section>
 
-    <article class="product">
-      <img src="assets/voile.PNG" alt="Voile">
-      <h3>Voile</h3>
-      <p class="price">25,00 €</p>
-      <a class="btn" href="https://wa.me/33698234296?text=Salam%2C%20je%20souhaite%20le%20Voile%20(14%E2%82%AC)." target="_blank" rel="noopener">Commander sur WhatsApp</a>
-    </article>
-   <button
-  class="btn snipcart-add-item"
-  data-item-id="voile-classique"
-  data-item-name="Voile"
-  data-item-price="25.00"
-  data-item-url="https://db99-dev.github.io/mon-site/index.html"
-  data-item-description="Voile opaque, tombé fluide et léger."
-  data-item-image="https://db99-dev.github.io/mon-site/assets/voile.PNG"
-  data-item-weight="150"
-  data-item-stackable="true"
-  data-item-custom1-name="Couleur"
-  data-item-custom1-options="Noir|Beige|Chocolat"
-  data-item-custom2-name="Taille"
-  data-item-custom2-options="Court|Moyen|Long"
->
-  Ajouter au panier
-</button>
+  <!-- ===== Produits ===== -->
+  <main id="produits" class="catalogue">
+    <div class="wrap">
+      <h2>Nos produits</h2>
 
-    <article class="product">
-      <img src="assets/sac.PNG" alt="Sac">
-      <h3>Sac</h3>
-      <p class="price">50,00 €</p>
-      <a class="btn" href="https://wa.me/33698234296?text=Salam%2C%20je%20souhaite%20le%20Sac%20(29%E2%82%AC)." target="_blank" rel="noopener">Commander sur WhatsApp</a>
-    </article>
-   <button
-  class="btn snipcart-add-item"
-  data-item-id="sac-noir"
-  data-item-name="Sac"
-  data-item-price="50.00"
-  data-item-url="https://db99-dev.github.io/mon-site/index.html"
-  data-item-description="Sac élégant détails dorés, format quotidien."
-  data-item-image="https://db99-dev.github.io/mon-site/assets/sac.PNG"
-  data-item-weight="800"
-  data-item-stackable="true"
-  data-item-custom1-name="Couleur"
-  data-item-custom1-options="Noir|Taupe"
->
-  Ajouter au panier
-</button>
-  </div>
-    <div class="hr-gold"></div>
-</section>
+      <div class="grid-3">
+        <!-- Produit 1 : Abaya -->
+        <article class="product">
+          <figure class="p-media">
+            <img src="assets/abaya.PNG" alt="Abaya noire NORÉA" loading="lazy" width="640" height="800">
+          </figure>
+          <div class="p-body">
+            <h3>Abaya noire</h3>
+            <p class="price">70,00 €</p>
 
-  <footer id="footer" class="site-footer site-footer--dark">
-  <div class="contact-links">
-    <a href="https://www.instagram.com/abdel_db/?igsh=YWxzd3ZtaDE4aGow&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
-    <span>•</span>
-    <a href="https://wa.me/33698234296" target="_blank" rel="noopener">WhatsApp</a>
-    <span>•</span>
-    <a href="mailto:abdel.diab@hotmail.com">Contact</a>
-  </div>
-  <p class="tiny">© NORÉA — Tous droits réservés</p>
-</footer>
-  <script>
-  const btn = document.getElementById('backTop');
-  window.addEventListener('scroll', ()=>{
-    btn.style.display = window.scrollY > 480 ? 'flex' : 'none';
-  });
-  btn.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "NORÉA",
-  "url": "https://db99-dev.github.io/mon-site/",
-  "logo": "https://db99-dev.github.io/mon-site/assets/Logo.jpg",
-  "sameAs": [
-    https://www.instagram.com/abdel_db/?igsh=YWxzd3ZtaDE4aGow&utm_source=qr"
-  ]
-}
+            <button
+              class="btn snipcart-add-item"
+              data-item-id="abaya-noire"
+              data-item-name="Abaya noire"
+              data-item-price="70.00"
+              data-item-url="https://db99-dev.github.io/mon-site/index.html"
+              data-item-description="Abaya coupe élégante, tissu premium."
+              data-item-image="https://db99-dev.github.io/mon-site/assets/abaya.PNG"
+              data-item-weight="700"
+              data-item-stackable="true"
+              data-item-custom1-name="Taille"
+              data-item-custom1-options="XS|S|M|L|XL"
+              data-item-custom2-name="Couleur"
+              data-item-custom2-options="Noir|Beige (précommande)+10.00">
+              Ajouter au panier
+            </button>
+          </div>
+        </article>
 
-</script>
+        <!-- Produit 2 : Voile -->
+        <article class="product">
+          <figure class="p-media">
+            <img src="assets/voile.PNG" alt="Voile NORÉA" loading="lazy" width="640" height="800">
+          </figure>
+          <div class="p-body">
+            <h3>Voile</h3>
+            <p class="price">25,00 €</p>
+
+            <button
+              class="btn snipcart-add-item"
+              data-item-id="voile-classique"
+              data-item-name="Voile"
+              data-item-price="25.00"
+              data-item-url="https://db99-dev.github.io/mon-site/index.html"
+              data-item-description="Voile opaque, tombé fluide et léger."
+              data-item-image="https://db99-dev.github.io/mon-site/assets/voile.PNG"
+              data-item-weight="150"
+              data-item-stackable="true"
+              data-item-custom1-name="Couleur"
+              data-item-custom1-options="Noir|Beige|Chocolat"
+              data-item-custom2-name="Longueur"
+              data-item-custom2-options="Court|Moyen|Long">
+              Ajouter au panier
+            </button>
+          </div>
+        </article>
+
+        <!-- Produit 3 : Sac -->
+        <article class="product">
+          <figure class="p-media">
+            <img src="assets/sac.PNG" alt="Sac NORÉA" loading="lazy" width="640" height="800">
+          </figure>
+          <div class="p-body">
+            <h3>Sac</h3>
+            <p class="price">50,00 €</p>
+
+            <button
+              class="btn snipcart-add-item"
+              data-item-id="sac-noir"
+              data-item-name="Sac"
+              data-item-price="50.00"
+              data-item-url="https://db99-dev.github.io/mon-site/index.html"
+              data-item-description="Sac élégant détails dorés, format quotidien."
+              data-item-image="https://db99-dev.github.io/mon-site/assets/sac.PNG"
+              data-item-weight="800"
+              data-item-stackable="true"
+              data-item-custom1-name="Couleur"
+              data-item-custom1-options="Noir|Taupe">
+              Ajouter au panier
+            </button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== À propos ===== -->
+  <section id="apropos" class="about">
+    <div class="wrap">
+      <h2>À propos</h2>
+      <p>NORÉA est une maison dédiée à la mode pudique : abayas & voiles premium, pensés pour durer. Nos valeurs : élégance, simplicité, qualité.</p>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq" class="faq">
+    <div class="wrap">
+      <h2>FAQ</h2>
+      <details>
+        <summary>Délais de livraison</summary>
+        <p>48–72h en France métropolitaine (hors week-end et jours fériés).</p>
+      </details>
+      <details>
+        <summary>Retours</summary>
+        <p>Vous disposez de 14 jours après réception (produit non porté, étiquettes intactes).</p>
+      </details>
+      <details>
+        <summary>Tailles & matières</summary>
+        <p>Guide des tailles sur chaque fiche produit. Matières douces et opaques.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p><strong>Instagram :</strong> <a href="https://www.instagram.com/maison.norea?igsh=YzFldDZkdHlkeWM4" target="_blank" rel="noopener">maison.norea</a></p>
+      <p><strong>Email :</strong> <a href="mailto:norea.pro@hotmail.com">norea.pro@hotmail.com</a></p>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav class="footer-links">
+        <a href="#" aria-disabled="true">Mentions légales</a>
+        <a href="#" aria-disabled="true">CGV</a>
+        <a href="#" aria-disabled="true">Confidentialité</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="tiny">© NORÉA — Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <!-- Container Snipcart (clé publique) -->
+  <div hidden id="snipcart" data-api-key="N2M3N2Y0ZDYtZjY2MC00MjhjLTllY2UtM2U3ZDUzZDI5YjE3NjM4OTc1NDg3NDgyNjUxMzU5"></div>
 </body>
 </html>
