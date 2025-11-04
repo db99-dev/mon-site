@@ -23,27 +23,30 @@
 <body>
 
   <!-- Header NORÉA (sticky) -->
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="#hero" aria-label="NORÉA">NORÉA</a>
+<header class="norea-header">
+  <div class="norea-top">
+    <a href="#hero" class="norea-logo">
+      <!-- Mets le bon chemin de ton logo -->
+      <img src="assets/logo.png" alt="Maison Noréa" />
+    </a>
 
-    <nav class="nav">
+    <nav class="norea-nav">
       <a href="#hero">Accueil</a>
-      <a href="#produits">Boutique</a>
-      <a href="a-propos.html">À propos</a>
+      <a href="#boutique">Boutique</a>
+      <a href="#apropos">À propos</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
-
-      <!-- Bouton panier Snipcart -->
-      <button class="cart-btn snipcart-checkout" aria-label="Voir le panier">
-        <span class="cart-icon">🛍️</span>
-        <span class="cart-text">Panier</span>
-        <span class="snipcart-items-count badge">0</span>
-      </button>
     </nav>
+
+    <!-- Bouton panier Snipcart -->
+    <button class="norea-cart snipcart-checkout" aria-label="Voir le panier">
+      <span>Panier</span>
+      <span class="norea-cart-sep">·</span>
+      <span class="snipcart-items-count">0</span>
+      <span class="norea-cart-total snipcart-total-price">€0.00</span>
+    </button>
   </div>
-</header>
-  
+</header>  
 <!-- ===== Hero ===== -->
 <section id="hero" class="hero hero--dark">
   <div class="wrap">
