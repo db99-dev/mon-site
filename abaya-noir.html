@@ -4,87 +4,77 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Abaya noire – NORÉA</title>
-
-  <link rel="icon" href="/favicon.ico?v=8">
+  <meta name="description" content="Abaya noire NORÉA. Tissu premium, coupe droite.">
+  <link rel="icon" href="/favicon.ico?v=9" />
+  <link rel="apple-touch-icon" href="assets/favicon.png?v=9" />
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Snipcart -->
   <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.css" />
   <script async src="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.js"></script>
-  <div hidden id="snipcart" data-api-key="N2M3N2Y0ZDYtZjY2MC00MjhjLTllY2UtM2U3ZDUzZDI5YjE3NjM4OTc1NDg3NDgyNjUxMzU5"></div>
 </head>
 <body>
+  <header class="site-header">
+    <div class="container header-bar">
+      <a href="/" class="brand"><img src="assets/Logo.jpg" class="brand-logo" alt=""><span class="brand-name">NORÉA</span></a>
+      <nav class="main-nav">
+        <a href="/">Accueil</a><a href="/#produits">Boutique</a><a href="/#apropos">À propos</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a>
+      </nav>
+      <button class="btn cart-btn snipcart-checkout" type="button">Panier <span class="snipcart-items-count">0</span></button>
+    </div>
+  </header>
 
-<header class="norea-header">
-  <nav class="norea-nav container">
-    <a href="index.html">Accueil</a>
-    <a href="index.html#shop">Boutique</a>
-    <a href="a-propos.html">À propos</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html">Contact</a>
-    <button class="snipcart-checkout btn-mini">Panier</button>
-  </nav>
-</header>
+  <main class="container" style="padding:28px 0 60px">
+    <div style="display:grid;gap:24px;grid-template-columns:1.1fr .9fr">
+      <div><img src="assets/abaya.PNG" alt="Abaya noire NORÉA" style="width:100%;border-radius:14px;border:1px solid rgba(255,255,255,.08)"/></div>
+      <div>
+        <h1>Abaya noire</h1>
+        <p class="p-price" style="font-size:1.25rem">70,00 €</p>
+        <p style="color:var(--muted)">Abaya fluide, opaque et élégante. Tissu premium, coupe droite, confortable.</p>
 
-<main class="container product-page">
-  <div class="product-gallery">
-    <img src="assets/abaya.PNG" alt="Abaya noire NORÉA" loading="lazy">
-  </div>
+        <div style="margin:14px 0">
+          <label>Taille</label><br/>
+          <select id="abaya-size" class="btn" style="background:#1f2430;margin-top:6px">
+            <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+          </select>
+        </div>
 
-  <div class="product-info">
-    <h1>Abaya noire</h1>
-    <p class="price">70,00 €</p>
+        <button type="button" class="btn btn-primary snipcart-add-item"
+          data-item-id="abaya-noire"
+          data-item-name="Abaya noire"
+          data-item-price="70.00"
+          data-item-url="/abaya-noir.html"
+          data-item-description="Abaya fluide, opaque et élégante. Tissu premium, coupe droite."
+          data-item-image="assets/abaya.PNG"
+          data-item-custom1-name="Taille"
+          data-item-custom1-options="XS|S|M|L|XL"
+          data-item-custom1-value=""
+          >
+          Ajouter au panier
+        </button>
 
-    <p class="lead">Abaya fluide, opaque et élégante. Coupe droite, tissu doux et confortable.</p>
+        <ul class="list-clean" style="margin-top:18px;color:var(--muted)">
+          <li>Livraison Mondial Relay offerte dès 59€</li>
+          <li>Colissimo domicile disponible</li>
+          <li>Retours sous 14 jours</li>
+        </ul>
+      </div>
+    </div>
+  </main>
 
-    <!-- Bouton Snipcart avec options -->
-    <button
-      class="btn snipcart-add-item"
-      data-item-id="abaya-noire"
-      data-item-name="Abaya noire"
-      data-item-price="70.00"
-      data-item-url="/abaya-noir.html"
-      data-item-image="https://db99-dev.github.io/mon-site/assets/abaya.PNG"
-      data-item-description="Abaya coupe élégante, tissu premium."
-      data-item-custom1-name="Taille"
-      data-item-custom1-options="XS|S|M|L|XL"
-      data-item-custom2-name="Couleur"
-      data-item-custom2-options="Noir"
-    >
-      Ajouter au panier
-    </button>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <nav class="footer-links">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="cgv.html">CGV</a>
+        <a href="confidentialite.html">Politique de confidentialité</a>
+        <a href="livraison.html">Livraison</a>
+        <a href="retours.html">Retours</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="copyright">© NORÉA</p>
+    </div>
+  </footer>
 
-    <section class="details">
-      <h2>Description</h2>
-      <ul>
-        <li>Tissu premium, opaque</li>
-        <li>Coupe droite & confortable</li>
-        <li>Entretien facile</li>
-      </ul>
-
-      <h2>Livraison & retours</h2>
-      <ul>
-        <li>✨ Mondial Relay offert dès 59 €</li>
-        <li>🚚 Colissimo domicile disponible</li>
-        <li>↩️ Retours sous 14 jours</li>
-      </ul>
-    </section>
-  </div>
-</main>
-
-<footer class="footer">
-  <div class="footer-bottom">
-    <small>© NORÉA — Tous droits réservés</small>
-  </div>
-</footer>
-
-<!-- fermer auto le panier après ajout -->
-<script>
-  document.addEventListener('snipcart.ready', () => {
-    Snipcart.events.on('item.added', () => {
-      setTimeout(() => Snipcart.api.theme.cart.close(), 300);
-    });
-  });
-</script>
+  <div hidden id="snipcart" data-api-key="N2M3N2Y0ZDYtZjY2MC00MjhjLTllY2UtM2U3ZDUzZDI5YjE3NjM4OTc1NDg3NDgyNjUxMzU5" data-config-modal-style="side"></div>
 </body>
 </html>
