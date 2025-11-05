@@ -114,3 +114,16 @@ footer {
 
 /* Header active link */
 .header nav a.active { color:#D8C7A1; }
+/* Micro-interactions NORÉA */
+.card { transition: transform .25s ease, box-shadow .25s ease; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,.08); }
+
+.btn { transition: transform .12s ease, filter .12s ease; }
+.btn:active { transform: translateY(1px) scale(.995); }
+
+.header nav a { position:relative; }
+.header nav a::after{
+  content:""; position:absolute; left:0; right:0; bottom:-6px; height:1px;
+  background:#D8C7A1; transform:scaleX(0); transform-origin:left; transition:transform .25s ease;
+}
+.header nav a:hover::after { transform:scaleX(1); }
