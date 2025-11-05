@@ -1,68 +1,122 @@
-<!DOCTYPE html><html lang="fr"><head>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NORÉA — Lookbook</title>
 
-  <title>NORÉA — Maison de voiles & abayas premium</title>
-  <meta name="description" content="NORÉA : abayas & voiles premium. Luxe discret, lignes maîtrisées, matières nobles. Livraison offerte dès 59€." />
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico?v=8" />
+  <link rel="shortcut icon" href="/favicon.ico?v=8">
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://maison-norea.fr/" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="NORÉA" />
-  <meta property="og:title" content="NORÉA — Maison de voiles & abayas premium" />
-  <meta property="og:description" content="Luxe discret, élégance & pudeur. Abayas & voiles premium conçus pour durer." />
-  <meta property="og:url" content="https://maison-norea.fr/" />
-  <meta property="og:image" content="https://maison-norea.fr/assets/Logo.jpg" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="NORÉA — Maison de voiles & abayas premium" />
-  <meta name="twitter:description" content="Luxe discret, élégance & pudeur." />
-  <meta name="twitter:image" content="https://maison-norea.fr/assets/Logo.jpg" />
-
-  <!-- Perf -->
-  <link rel="preconnect" href="https://cdn.snipcart.com" crossorigin>
-  <link rel="dns-prefetch" href="//cdn.snipcart.com">
-
-  <!-- Favicons -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico?v=9">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=9">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png?v=9">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v=9">
-
-  <!-- Fonts + CSS global -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Snipcart (laisser tel quel si présent sur la page Boutique) -->
+  <!-- Snipcart CSS (panier) -->
   <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.css" />
-  <script async src="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.js"></script>
 </head>
 <body>
-<header class="header">
-  <div class="logo">NORÉA</div>
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="boutique.html">Boutique</a>
-    <a href="lookbook.html" class="active">Lookbook</a>
-    <a href="apropos.html">À propos</a>
-    <a href="contact.html">Contact</a>
-    <a class="panier-btn snipcart-checkout">Panier</a>
-  </nav>
-</header>
 
-<section class="container narrow">
-  <h1 class="page-title">Lookbook</h1>
-  <p class="lead">Silence. Matières. Lignes.</p>
+  <!-- Header -->
+  <header class="norea-header">
+    <div class="norea-top">
+      <a href="index.html" class="norea-logo">NORÉA</a>
+      <nav class="norea-nav">
+        <a href="index.html">Accueil</a>
+        <a href="boutique.html">Boutique</a>
+        <a href="lookbook.html" class="active">Lookbook</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+        <button class="snipcart-checkout btn-mini">Panier</button>
+      </nav>
+    </div>
+  </header>
 
-  <div class="gallery">
-    <img src="assets/abaya.PNG" alt="">
-    <img src="assets/voile.PNG" alt="">
-    <img src="assets/sac.PNG" alt="">
+  <!-- Hero Lookbook -->
+  <section class="lookbook-hero">
+    <div class="container">
+      <h1>Lookbook</h1>
+      <p>Une vision discrète du luxe. Lignes maîtrisées, matières nobles.</p>
+    </div>
+  </section>
+
+  <!-- Grille Lookbook -->
+  <main class="container">
+    <div class="grid-lookbook">
+      <!-- Utilise tes images dans /assets ; tu peux en ajouter autant que tu veux -->
+      <figure class="lb-item">
+        <img src="assets/abaya.PNG" alt="Abaya noire" data-full="assets/abaya.PNG" loading="lazy">
+      </figure>
+      <figure class="lb-item">
+        <img src="assets/voile.PNG" alt="Voile noir" data-full="assets/voile.PNG" loading="lazy">
+      </figure>
+      <figure class="lb-item">
+        <img src="assets/sac.PNG" alt="Sac noir" data-full="assets/sac.PNG" loading="lazy">
+      </figure>
+      <!-- Duplique ces <figure> si tu veux 6–9 photos -->
+      <figure class="lb-item">
+        <img src="assets/abaya.PNG" alt="Abaya noire (détail)" data-full="assets/abaya.PNG" loading="lazy">
+      </figure>
+      <figure class="lb-item">
+        <img src="assets/voile.PNG" alt="Voile (profil)" data-full="assets/voile.PNG" loading="lazy">
+      </figure>
+      <figure class="lb-item">
+        <img src="assets/sac.PNG" alt="Sac (fermoir)" data-full="assets/sac.PNG" loading="lazy">
+      </figure>
+    </div>
+  </main>
+
+  <!-- Footer (simple) -->
+  <footer class="footer-min">
+    <div class="container footer-min-inner">
+      <span>© NORÉA — Tous droits réservés</span>
+      <nav class="footer-min-links">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Politique de confidentialité</a>
+        <a href="retours.html">Retours</a>
+        <a href="livraison.html">Livraison</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Lightbox (overlay) -->
+  <div class="lb-backdrop" hidden>
+    <button class="lb-close" aria-label="Fermer">×</button>
+    <img class="lb-img" alt="">
   </div>
-</section>
 
-<footer><p>© NORÉA — Maison de couture pudique</p></footer>
-</body></html>
+  <!-- Snipcart JS -->
+  <script async src="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.js"></script>
+
+  <!-- Lightbox JS -->
+  <script>
+    (function () {
+      const backdrop = document.querySelector('.lb-backdrop');
+      const imgFull   = document.querySelector('.lb-img');
+      const closeBtn  = document.querySelector('.lb-close');
+
+      document.addEventListener('click', (e) => {
+        const img = e.target.closest('.lb-item img');
+        if (!img) return;
+        const src = img.getAttribute('data-full') || img.src;
+        imgFull.src = src;
+        backdrop.hidden = false;
+        document.body.classList.add('no-scroll');
+      });
+
+      function closeLb() {
+        backdrop.hidden = true;
+        imgFull.src = '';
+        document.body.classList.remove('no-scroll');
+      }
+      closeBtn.addEventListener('click', closeLb);
+      backdrop.addEventListener('click', (e) => {
+        if (e.target === backdrop) closeLb();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLb();
+      });
+    })();
+  </script>
+</body>
+</html>
