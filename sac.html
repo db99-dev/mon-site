@@ -1,44 +1,44 @@
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sac – Maison Noréa</title>
+<!doctype html><html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sac – NORÉA</title>
+<link rel="icon" href="/favicon.ico?v=8">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.css">
+<script async src="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.js"></script>
+</head><body>
+<div hidden id="snipcart" data-api-key="N2M3N2Y0ZDYtZjY2MC00MjhjLTllY2UtM2U3ZDUzZDI5YjE3NjM4OTc1NDg3NDgyNjUxMzU5"></div>
 
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.css" />
-  <script async src="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.js"></script>
-</head>
-<body>
-  <div hidden id="snipcart" data-api-key="N2M3N2Y0ZDYtZjY2MC00MjhjLTllY2UtM2U3ZDUzZDI5YjE3NjM4OTc1NDg3NDgyNjUxMzU5"></div>
-  <main class="product-detail">
-    <img src="assets/sac.PNG" alt="Sac NORÉA" class="product-hero">
+<header class="norea-header"><div class="container header-inner">
+  <a href="/" class="brand"><img src="assets/Logo.jpg" class="brand-logo" alt=""><span class="brand-name">NORÉA</span></a>
+  <nav class="nav"><a href="/">Accueil</a><a href="/#boutique">Boutique</a></nav>
+  <button class="btn btn-cart snipcart-checkout">Panier · <span class="snipcart-items-count">0</span></button>
+</div></header>
 
-    <h1>Sac</h1>
-    <p class="price">50,00 €</p>
+<main class="container" style="margin-top:24px">
+  <article class="product" style="display:grid;grid-template-columns:1.1fr .9fr;gap:20px">
+    <figure class="p-media"><img src="assets/sac.PNG" alt="Sac"></figure>
+    <div class="p-body">
+      <h1 class="p-title">Sac</h1>
+      <p class="price">50,00 €</p>
+      <p>Sac épuré, détails dorés NORÉA.</p>
+      <button
+        class="btn btn-add snipcart-add-item"
+        data-item-id="sac"
+        data-item-name="Sac"
+        data-item-price="50.00"
+        data-item-url="/sac.html"
+        data-item-image="/assets/sac.PNG"
+        data-item-description="Sac épuré, détails dorés NORÉA."
+        data-item-stackable="true"
+        data-item-custom1-name="Couleur"
+        data-item-custom1-options="Noir"
+      >Ajouter au panier</button>
+      <p><a href="/#boutique">← Continuer vos achats</a></p>
+    </div>
+  </article>
+</main>
 
-    <button
-      class="btn snipcart-add-item"
-      data-item-id="sac"
-      data-item-name="Sac"
-      data-item-price="50.00"
-      data-item-url="/sac.html"
-      data-item-image="/assets/sac.PNG"
-      data-item-description="Sac élégant, format quotidien."
-      data-item-stackable="true"
-    >
-      Ajouter au panier
-    </button>
-
-    <h2>Description</h2>
-    <p>Sac élégant, parfait pour tous les jours.</p>
-
-    <h2>Livraison & retours</h2>
-    <ul>
-      <li>Livraison Mondial Relay offerte dès 59€</li>
-      <li>Colissimo domicile disponible</li>
-      <li>Retours sous 14 jours</li>
-    </ul>
-  </main>
-</body>
-</html>
+<script>
+document.addEventListener('snipcart.ready',()=>Snipcart.events.on('item.added',()=>{try{Snipcart.api.theme.cart.close()}catch(e){};}));
+</script>
+</body></html>
