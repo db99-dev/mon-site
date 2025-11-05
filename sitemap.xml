@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://maison-norea.fr/</loc></url>
-  <url><loc>https://maison-norea.fr/a-propos.html</loc></url>
-  <url><loc>https://maison-norea.fr/faq.html</loc></url>
+  <url><loc>https://maison-norea.fr/abaya-noire.html</loc></url>
+  <url><loc>https://maison-norea.fr/voile.html</loc></url>
+  <url><loc>https://maison-norea.fr/sac.html</loc></url>
+  <url><loc>https://maison-norea.fr/mentions-legales.html</loc></url>
+  <url><loc>https://maison-norea.fr/cgv.html</loc></url>
+  <url><loc>https://maison-norea.fr/confidentialite.html</loc></url>
   <url><loc>https://maison-norea.fr/livraison.html</loc></url>
   <url><loc>https://maison-norea.fr/retours.html</loc></url>
-  <url><loc>https://maison-norea.fr/mentions-légales.html</loc></url>
-  <url><loc>https://maison-norea.fr/ccv.html</loc></url>
+  <url><loc>https://maison-norea.fr/faq.html</loc></url>
+  <url><loc>https://maison-norea.fr/contact.html</loc></url>
 </urlset>
