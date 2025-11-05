@@ -5,135 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>NORÉA — Abayas & Voiles premium</title>
-  <meta name="description" content="NORÉA : Abayas & voiles premium. Élégance, simplicité, qualité. Livraison offerte dès 59€ en Mondial Relay." />
+  <meta name="description" content="Abayas & voiles premium — élégance & pudeur. Livraison offerte dès 59€ en Mondial Relay. Retours sous 14 jours." />
 
-<!-- Open Graph / Twitter -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="NORÉA — Abayas & Voiles premium">
-<meta property="og:description" content="Abayas & voiles premium — élégance & pudeur. Livraison offerte dès 59€ en Mondial Relay.">
-<meta property="og:url" content="https://maison-norea.fr/">
-<meta property="og:image" content="https://maison-norea.fr/assets/Logo.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="NORÉA — Abayas & Voiles premium">
-<meta name="twitter:description" content="Abayas & voiles premium — élégance & pudeur. Livraison offerte dès 59€.">
-<meta name="twitter:image" content="https://maison-norea.fr/assets/Logo.jpg">
+  <!-- Favicons (facultatif si non présents) -->
+  <link rel="icon" href="/favicon.ico?v=9">
+  <link rel="apple-touch-icon" href="assets/favicon.png?v=9">
 
-<!-- JSON-LD : 3 produits -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "itemListElement": [
-    {
-      "@type": "Product",
-      "name": "Abaya noire",
-      "image": "https://maison-norea.fr/assets/abaya.PNG",
-      "description": "Abaya fluide, opaque et élégante. Coupe droite, tissu doux et confortable.",
-      "brand": {"@type":"Brand","name":"NORÉA"},
-      "offers": {
-        "@type": "Offer",
-        "price": "70.00",
-        "priceCurrency": "EUR",
-        "availability": "https://schema.org/InStock",
-        "url": "https://maison-norea.fr/abaya-noire.html"
-      }
-    },
-    {
-      "@type": "Product",
-      "name": "Voile",
-      "image": "https://maison-norea.fr/assets/voile.PNG",
-      "description": "Voile premium, doux et opaque.",
-      "brand": {"@type":"Brand","name":"NORÉA"},
-      "offers": {
-        "@type": "Offer",
-        "price": "25.00",
-        "priceCurrency": "EUR",
-        "availability": "https://schema.org/InStock",
-        "url": "https://maison-norea.fr/voile.html"
-      }
-    },
-    {
-      "@type": "Product",
-      "name": "Sac",
-      "image": "https://maison-norea.fr/assets/sac.PNG",
-      "description": "Sac épuré, détails dorés NORÉA.",
-      "brand": {"@type":"Brand","name":"NORÉA"},
-      "offers": {
-        "@type": "Offer",
-        "price": "50.00",
-        "priceCurrency": "EUR",
-        "availability": "https://schema.org/InStock",
-        "url": "https://maison-norea.fr/sac.html"
-      }
-    }
-  ]
-}
-</script>
-  
-  <!-- Favicons -->
-  <link rel="icon" href="/favicon.ico?v=8">
-  <link rel="shortcut icon" href="/favicon.ico?v=8">
-  <link rel="apple-touch-icon" href="assets/favicon.png?v=8">
+  <!-- Snipcart settings: ne JAMAIS ouvrir le panier auto -->
+  <script>
+    window.SnipcartSettings = {
+      publicApiKey: "N2M3N2Y0ZDYtZjY2MC00MjhjLTllY2UtM2U3ZDUzZDI5YjE3NjM4OTc1NDg3NDgyNjUxMzU5",
+      addProductBehavior: "none",
+      currency: "EUR"
+    };
+  </script>
+  <link rel="preconnect" href="https://cdn.snipcart.com" />
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.css" />
+  <script async src="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.js"></script>
 
   <!-- Styles -->
-  <link rel="preconnect" href="https://cdn.snipcart.com" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.css" />
-
-  <!-- Snipcart -->
-  <script async src="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.js"></script>
 </head>
-<!-- Toast -->
-<div id="toast" aria-live="polite" aria-atomic="true"></div>
-
-<style>
-#toast{
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  z-index: 9999;
-  font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-}
-.toast-item{
-  background:#111;
-  color:#fff;
-  padding:10px 14px;
-  border-radius:8px;
-  box-shadow:0 6px 20px rgba(0,0,0,.25);
-  margin-top:8px;
-  font-size:14px;
-  opacity:0;
-  transform:translateY(-6px);
-  animation: toast-in .18s ease-out forwards;
-}
-@keyframes toast-in{
-  to{opacity:1; transform:translateY(0)}
-}
-</style>
-
-<script>
-function showToast(msg){
-  const t = document.createElement('div');
-  t.className = 'toast-item';
-  t.textContent = msg;
-  document.getElementById('toast').appendChild(t);
-  setTimeout(()=>{ t.style.opacity='0'; t.style.transition='opacity .2s';
-    setTimeout(()=> t.remove(), 220);
-  }, 1800);
-}
-document.addEventListener('snipcart.ready', () => {
-  Snipcart.events.on('item.added', () => showToast('Ajouté au panier ✅'));
-});
-</script>
 <body>
 
-  <!-- Snipcart modal (clé TEST fournie) -->
-  <div hidden id="snipcart" data-api-key="N2M3N2Y0ZDYtZjY2MC00MjhjLTllY2UtM2U3ZDUzZDI5YjE3NjM4OTc1NDg3NDgyNjUxMzU5"></div>
+  <!-- Snipcart container -->
+  <div hidden id="snipcart"></div>
 
-  <!-- Toast minimal -->
-  <div id="toast" class="toast" aria-live="polite" aria-atomic="true"></div>
+  <!-- Toast -->
+  <div id="toast" aria-live="polite" aria-atomic="true"></div>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="norea-header">
     <div class="container header-inner">
       <a href="/" class="brand">
@@ -154,12 +55,10 @@ document.addEventListener('snipcart.ready', () => {
       </button>
     </div>
 
-    <div class="promo">
-      Livraison gratuite dès 59€ — Retours sous 14 jours ✨
-    </div>
+    <div class="promo">Livraison gratuite dès 59€ — Retours 14 jours ✨</div>
   </header>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <section id="hero" class="hero">
     <div class="container hero-inner">
       <div class="hero-text">
@@ -173,20 +72,21 @@ document.addEventListener('snipcart.ready', () => {
     </div>
   </section>
 
-  <!-- Boutique -->
+  <!-- BOUTIQUE -->
   <main id="boutique" class="container">
     <h2 class="section-title">Nos produits</h2>
 
     <div class="grid">
-      <!-- Produit 1 -->
+      <!-- Abaya -->
       <article class="product">
         <figure class="p-media">
-          <!-- pas de lien cliquable sur l'image (évite le zoom natif du navigateur) -->
-          <img src="assets/abaya.PNG" alt="Abaya noire NORÉA" loading="lazy">
+          <a href="abaya-noire.html" class="p-link" aria-label="Ouvrir la fiche Abaya noire">
+            <img src="assets/abaya.PNG" alt="Abaya noire NORÉA" loading="lazy">
+          </a>
         </figure>
 
         <div class="p-body">
-         <h3 class="p-title"><a href="abaya-noire.html">Abaya noire</a></h3>
+          <h3 class="p-title"><a href="abaya-noire.html">Abaya noire</a></h3>
           <p class="price">70,00 €</p>
 
           <button
@@ -194,7 +94,7 @@ document.addEventListener('snipcart.ready', () => {
             data-item-id="abaya-noire"
             data-item-name="Abaya noire"
             data-item-price="70.00"
-            data-item-url="/index.html#abaya-noire"
+            data-item-url="/abaya-noire.html"
             data-item-image="/assets/abaya.PNG"
             data-item-description="Abaya fluide, opaque et élégante. Coupe droite, tissu doux et confortable."
             data-item-stackable="true"
@@ -206,22 +106,23 @@ document.addEventListener('snipcart.ready', () => {
         </div>
       </article>
 
-      <!-- Produit 2 -->
+      <!-- Voile -->
       <article class="product">
         <figure class="p-media">
-          <img src="assets/voile.PNG" alt="Voile NORÉA" loading="lazy">
+          <a href="voile.html" class="p-link" aria-label="Ouvrir la fiche Voile">
+            <img src="assets/voile.PNG" alt="Voile NORÉA" loading="lazy">
+          </a>
         </figure>
-
-       <div class="p-body">
-        <h3 class="p-title"><a href="voile.html">Voile</a></h3>
-         <p class="price">25,00 €</p>
+        <div class="p-body">
+          <h3 class="p-title"><a href="voile.html">Voile</a></h3>
+          <p class="price">25,00 €</p>
 
           <button
             class="btn btn-add snipcart-add-item"
             data-item-id="voile"
             data-item-name="Voile"
             data-item-price="25.00"
-            data-item-url="/index.html#voile"
+            data-item-url="/voile.html"
             data-item-image="/assets/voile.PNG"
             data-item-description="Voile premium, doux et opaque."
             data-item-stackable="true"
@@ -233,14 +134,15 @@ document.addEventListener('snipcart.ready', () => {
         </div>
       </article>
 
-      <!-- Produit 3 -->
+      <!-- Sac -->
       <article class="product">
         <figure class="p-media">
-          <img src="assets/sac.PNG" alt="Sac NORÉA" loading="lazy">
+          <a href="sac.html" class="p-link" aria-label="Ouvrir la fiche Sac">
+            <img src="assets/sac.PNG" alt="Sac NORÉA" loading="lazy">
+          </a>
         </figure>
-
         <div class="p-body">
-         <h3 class="p-title"><a href="sac.html">Sac</a></h3>
+          <h3 class="p-title"><a href="sac.html">Sac</a></h3>
           <p class="price">50,00 €</p>
 
           <button
@@ -248,12 +150,10 @@ document.addEventListener('snipcart.ready', () => {
             data-item-id="sac"
             data-item-name="Sac"
             data-item-price="50.00"
-            data-item-url="/index.html#sac"
+            data-item-url="/sac.html"
             data-item-image="/assets/sac.PNG"
             data-item-description="Sac épuré, détails dorés NORÉA."
             data-item-stackable="true"
-            data-item-custom1-name="Couleur"
-            data-item-custom1-options="Noir"
           >
             Ajouter au panier
           </button>
@@ -273,12 +173,12 @@ document.addEventListener('snipcart.ready', () => {
       </div>
       <div class="benefit">
         <strong>🔒 Paiement sécurisé</strong>
-        <p>Carte bancaire via Stripe.</p>
+        <p>Stripe · Carte bancaire.</p>
       </div>
     </section>
   </main>
 
-  <!-- Pied de page -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-grid">
       <div>
@@ -291,7 +191,7 @@ document.addEventListener('snipcart.ready', () => {
         <ul class="list">
           <li><a href="livraison.html">Délais de livraison</a></li>
           <li><a href="retours.html">Retours</a></li>
-          <li><a href="mentions-légales.html">Tailles & matières</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
         </ul>
       </div>
 
@@ -307,8 +207,8 @@ document.addEventListener('snipcart.ready', () => {
 
     <div class="container footer-bottom">
       <nav class="footer-links">
-        <a href="mentions-légales.html">Mentions légales</a>
-        <a href="ccv.html">CGV</a>
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="cgv.html">CGV</a>
         <a href="confidentialite.html">Politique de confidentialité</a>
         <a href="livraison.html">Livraison</a>
         <a href="retours.html">Retours</a>
@@ -319,24 +219,18 @@ document.addEventListener('snipcart.ready', () => {
     </div>
   </footer>
 
-  <!-- Empêcher l’ouverture automatique du panier + petit toast -->
+  <!-- Toast JS -->
   <script>
-    document.addEventListener('snipcart.ready', function () {
-      const toast = document.getElementById('toast');
-
-      function showToast(msg) {
-        toast.textContent = msg;
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 1400);
+    document.addEventListener('snipcart.ready', () => {
+      const root = document.getElementById('toast');
+      function toast(msg){
+        const t = document.createElement('div');
+        t.className = 'toast-item';
+        t.textContent = msg;
+        root.appendChild(t);
+        setTimeout(()=>{ t.style.opacity='0'; t.style.transition='opacity .2s'; setTimeout(()=> t.remove(),220); }, 1600);
       }
-
-      // Quand un article est ajouté, on referme le panier et on montre un toast
-      Snipcart.events.on('item.added', function () {
-        try {
-          Snipcart.api.theme.cart.close();
-        } catch(e){}
-        showToast('Ajouté au panier');
-      });
+      Snipcart.events.on('item.added', () => toast('Ajouté au panier ✅'));
     });
   </script>
 </body>
