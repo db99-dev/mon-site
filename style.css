@@ -204,3 +204,15 @@ footer {
 .norea-nav a.active { color: #D8C7A1; }
 /* Force l'attribut [hidden] à vraiment cacher l'élément */
 [hidden] { display: none !important; }
+/* 1) Cache VRAIMENT tout ce qui est [hidden] */
+[hidden] { display: none !important; }
+
+/* 2) Empêche un défilement horizontal fantôme qui “pousse” le header sur le côté */
+html, body { width:100%; max-width:100%; overflow-x:hidden; }
+
+/* 3) Garantit l'empilement propre : header en haut, lightbox au-dessus de tout */
+.site-header { position: sticky; top: 0; z-index: 50; }
+.lb-backdrop  { position: fixed; inset: 0; z-index: 9999; }
+
+/* 4) Sécurité : images responsives (évite qu’une image déborde et crée une colonne à droite) */
+img { max-width: 100%; height: auto; display: block; }
