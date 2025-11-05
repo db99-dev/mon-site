@@ -87,14 +87,12 @@
 
   <!-- Snipcart JS -->
   <script async src="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.js"></script>
-  
- <script>
+  <script>
   (function () {
     const backdrop = document.querySelector('.lb-backdrop');
     const imgFull  = document.querySelector('.lb-img');
     const closeBtn = document.querySelector('.lb-close');
 
-    // Assure-toi que c'est bien caché au chargement
     function hideOnStart() {
       if (backdrop) backdrop.setAttribute('hidden', '');
       document.body.classList.remove('no-scroll');
@@ -111,17 +109,11 @@
       document.body.classList.add('no-scroll');
     });
 
-    function closeLb() {
-      hideOnStart();
-    }
+    function closeLb() { hideOnStart(); }
     closeBtn.addEventListener('click', closeLb);
-    backdrop.addEventListener('click', (e) => {
-      if (e.target === backdrop) closeLb();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeLb();
-    });
+    backdrop.addEventListener('click', (e) => { if (e.target === backdrop) closeLb(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); });
   })();
-</script>
+</script> 
 </body>
 </html>
