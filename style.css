@@ -283,3 +283,29 @@ a:hover { text-decoration: underline; }
   margin: 0 auto;
   padding: 16px;
 }
+/* Liens neutres (plus de bleu souligné) */
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Fiche produit */
+.product-detail {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+}
+.product-hero {
+  max-width: 480px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 16px;
+  border-radius: 8px;
+}
+.price { font-weight: 600; margin: 8px 0 16px; }
+.btn {
+  display: inline-block;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
