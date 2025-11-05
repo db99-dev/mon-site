@@ -21,6 +21,16 @@
   data-api-key="N2M3N2Y0ZDYtZjY2MC00MjhjLTllY2UtM2U3ZDUzZDI5YjE3NjM4OTc1NDg3NDgyNjUxMzU5"
   data-config-add-product-behavior="none">
 </script>
+  <script>
+  document.addEventListener('snipcart.ready', function () {
+    // Si pour une raison quelconque le panier s’ouvre, on le referme aussitôt
+    Snipcart.events.on('item.added', function () {
+      setTimeout(function () {
+        try { Snipcart.api.theme.cart.close(); } catch(e) {}
+      }, 80);
+    });
+  });
+</script>
 </head>
 <body>
 
