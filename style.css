@@ -1,311 +1,153 @@
-/* ===== Thème NORÉA — propre, luxe ===== */
-:root{
-  --beige: #f4eee7;
-  --black: #0C0B0A;
-  --text:  #1c1b1a;
-  --white: #fff;
-  --gold:  #BFA77A;
-  --gold-d:#a98f63;
-  --shadow: 0 8px 30px rgba(0,0,0,.06);
-}
+/* Reset léger */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img { max-width: 100%; display: block; }
 
-*{ box-sizing:border-box }
-html,body{ margin:0; padding:0 }
+/* Thème */
+:root{
+  --bg:#0f1115;
+  --panel:#1a1f29;
+  --muted:#9aa4b2;
+  --text:#f6f7f9;
+  --brand:#d9b56e; /* or doux doré */
+  --brand-2:#e7c883;
+  --border:#2a3140;
+}
 
 body{
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-  background: var(--beige);
+  background: var(--bg);
   color: var(--text);
-  line-height: 1.55;
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif;
 }
 
-/* Utils */
-.wrap{ width:min(1100px, 92%); margin-inline:auto }
+/* Helpers */
+.container{ width:min(1120px, 92%); margin-inline:auto; }
+.section-title{ font-size: clamp(24px, 2.6vw, 34px); margin: 56px 0 24px; }
+
+/* Header */
+.norea-header{
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: saturate(120%) blur(8px);
+  background: rgba(15,17,21,.7);
+  border-bottom: 1px solid var(--border);
+}
+.header-inner{
+  display: flex; align-items: center; gap: 16px;
+  padding: 12px 0;
+}
+.brand{ display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
+.brand-logo{ height: 38px; width:auto; border-radius: 4px; object-fit: cover; }
+.brand-name{ font-weight: 700; letter-spacing:.08em; display:none; }
+
+.nav{ margin-left: auto; display: flex; gap: 18px; }
+.nav a{
+  color: var(--text); text-decoration: none; opacity:.85;
+  padding: 6px 8px; border-radius: 6px;
+}
+.nav a:hover{ background: var(--panel); opacity:1; }
+
 .btn{
-  display:inline-block; cursor:pointer;
-  background:var(--gold); color:var(--black);
-  padding:12px 22px; border-radius:10px;
-  border:2px solid var(--gold);
-  font-weight:700; text-decoration:none;
-  transition:.25s;
+  appearance: none; border: 0; cursor: pointer;
+  padding: 10px 14px; border-radius: 8px;
+  font-weight: 600;
 }
-.btn:hover{ background:var(--black); color:var(--gold) }
+.btn-primary{ background: var(--brand); color:#1a1200; }
+.btn-primary:hover{ background: var(--brand-2); }
+.btn-cart{
+  background: var(--panel); color: var(--text);
+  border: 1px solid var(--border);
+}
 
-/* ===== Header ===== */
-.site-header{
-  position:sticky; top:0; z-index:50;
-  background:var(--black); color:var(--white);
-  border-bottom:1px solid rgba(255,255,255,.08);
+.promo{
+  background: #141924;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  padding: 8px 0;
+  color: var(--muted);
 }
-.site-header .wrap{
-  display:flex; align-items:center; gap:18px;
-  padding:14px 0;
-}
-.brand{ color:var(--white); text-decoration:none; font-weight:800; letter-spacing:.08em }
-.nav{ margin-left:auto; display:flex; gap:18px }
-.nav a{ color:#ddd; text-decoration:none; font-weight:600 }
-.nav a:hover{ color:var(--gold) }
 
-.cart-btn{
-  margin-left:8px;
-  background:#151413; color:#eee;
-  border:1px solid rgba(255,255,255,.12);
-  padding:8px 12px; border-radius:10px;
-  display:flex; align-items:center; gap:8px;
-  cursor:pointer; font-weight:700;
+/* Hero */
+.hero{ padding: 36px 0 18px; border-bottom:1px solid var(--border); }
+.hero-inner{
+  display: grid; align-items: center;
+  grid-template-columns: 1.2fr .8fr; gap: 24px;
 }
-.cart-btn .count{ min-width:18px; text-align:center }
+.hero-text h1{ font-size: clamp(36px, 6vw, 64px); margin: 0 0 8px; letter-spacing:.06em; }
+.hero-text p{ margin: 0 0 18px; color: var(--muted); }
+.hero-media img{ border-radius: 10px; border:1px solid var(--border); }
 
-/* ===== Hero ===== */
-.hero{
-  background:var(--black); color:var(--white);
-  padding:90px 0 70px;
-  text-align:center;
+/* Grille produits */
+.grid{
+  display: grid; gap: 18px;
+  grid-template-columns: repeat(3, 1fr);
 }
-.hero .logo{
-  width:min(420px, 70vw); height:auto;
-  display:block; margin:0 auto 16px;
-  filter: drop-shadow(0 12px 20px rgba(0,0,0,.25));
-}
-.hero-subtitle{ opacity:.85; margin:6px 0 18px; }
-.hero .btn{ font-size:15px }
-
-/* ===== Benefits ===== */
-.benefits{ padding:38px 0 18px }
-.grid-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px }
-.card{
-  background:var(--white);
-  border:2px solid var(--gold);
-  border-radius:14px; padding:18px;
-  box-shadow:var(--shadow)
-}
-.card h3{ margin:4px 0 6px }
-
-/* ===== Catalogue / produits ===== */
-.catalogue{ padding:38px 0 60px }
-.catalogue h2{ text-align:center; margin:0 0 22px; font-size:clamp(22px, 2.6vw, 34px) }
+@media (max-width: 920px){ .grid{ grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px){ .grid{ grid-template-columns: 1fr; } }
 
 .product{
-  background:var(--white);
-  border:2px solid var(--gold);
-  border-radius:14px; overflow:hidden;
-  box-shadow:var(--shadow);
-  display:flex; flex-direction:column;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex; flex-direction: column;
 }
-.p-media img{ width:100%; height:auto; display:block }
-.p-body{ padding:16px; display:grid; gap:10px }
-.price{ font-weight:800; font-size:18px }
+.p-media{ aspect-ratio: 4/5; overflow: hidden; }
+.p-media img{ width:100%; height:100%; object-fit: cover; transform: scale(1.0); transition: transform .35s ease; }
+.product:hover .p-media img{ transform: scale(1.04); }
 
-/* ===== À propos / FAQ / Contact ===== */
-.about, .faq, .contact{ padding:44px 0 }
-.about h2, .faq h2, .contact h2{ margin-top:0 }
+.p-body{ padding: 14px; display: grid; gap: 10px; }
+.p-title{ margin: 0; font-size: 18px; }
+.p-title a, .p-title{ color: var(--text); text-decoration: none; }
+.p-title a:hover{ text-decoration: underline; }
+.price{ margin: 0; color: var(--brand-2); font-weight: 700; }
+.btn-add{
+  background: var(--brand); color:#1a1200;
+}
+.btn-add:hover{ background: var(--brand-2); }
 
-/* FAQ accordéon */
-details{ background:var(--white); border:1px solid #e7e0d6; border-radius:10px; padding:10px 14px; margin:10px 0 }
-summary{ cursor:pointer; font-weight:700 }
+/* Avantages */
+.benefits{
+  margin: 28px 0 56px;
+  display: grid; gap: 14px;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 840px){ .benefits{ grid-template-columns: 1fr; } }
+.benefit{
+  background: var(--panel); border:1px solid var(--border);
+  border-radius: 10px; padding: 14px;
+}
+.benefit p{ margin: 4px 0 0; color: var(--muted); }
 
-/* ===== Footer ===== */
-.site-footer{
-  background:var(--black); color:#ddd; padding:28px 0; border-top:1px solid rgba(255,255,255,.08);
+/* Footer */
+.footer{
+  border-top:1px solid var(--border);
+  margin-top: 32px; padding: 24px 0 28px;
+  background: #0d1016;
 }
-.footer-links{ display:flex; flex-wrap:wrap; gap:16px; margin-bottom:8px }
-.footer-links a{ color:#ddd; text-decoration:none }
-.footer-links a:hover{ color:var(--gold) }
-.tiny{ opacity:.7; font-size:13px }
+.footer-grid{
+  display: grid; gap: 24px;
+  grid-template-columns: 2fr 1fr 1fr;
+}
+@media (max-width: 900px){ .footer-grid{ grid-template-columns: 1fr; } }
+.footer h4{ margin: 0 0 8px; }
+.list{ list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.footer a{ color: var(--text); text-decoration: none; opacity: .9; }
+.footer a:hover{ text-decoration: underline; }
+.footer-bottom{
+  border-top:1px solid var(--border);
+  margin-top: 20px; padding-top: 14px;
+  display:flex; align-items:center; justify-content: space-between; gap: 12px;
+}
+.footer-links{ display:flex; gap:12px; flex-wrap:wrap; }
+.footer small{ color: var(--muted); }
 
-/* ===== Responsive ===== */
-@media (max-width:900px){
-  .grid-3{ grid-template-columns:1fr }
-  .nav{ display:none } /* on simplifie sur mobile */
+/* Toast (ajout panier) */
+.toast{
+  position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%);
+  background: #111; color: #fff;
+  padding: 10px 14px; border-radius: 8px;
+  border: 1px solid #333; opacity: 0; pointer-events: none;
+  transition: opacity .2s ease;
 }
-
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="#hero" aria-label="NORÉA">NORÉA</a>
-
-    <nav class="nav">
-      <a href="#hero">Accueil</a>
-      <a href="#produits">Boutique</a>
-      <a href="a-propos.html">À propos</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-
-      <!-- Bouton panier Snipcart -->
-      <button class="cart-btn snipcart-checkout" aria-label="Voir le panier">
-        <span class="cart-icon">🛍️</span>
-        <span class="cart-text">Panier</span>
-        <span class="snipcart-items-count badge">0</span>
-      </button>
-    </nav>
-  </div>
-</header>
-
-/* ===== Header Noréa (sticky) ===== */
-:root{
-  --black: var(--black, #0C0B0A);
-  --white: var(--white, #ffffff);
-  --gold:  var(--gold,  #BFA77A);
-  --beige: var(--beige, #f4eee7);
-}
-
-.norea-header{
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(12,11,10,0.8);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(191,167,122,0.35);
-}
-.norea-top{
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 10px 16px;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 10px;
-}
-.norea-logo img{
-  height: 38px; /* ajuste si tu veux plus grand */
-  display: block;
-  filter: drop-shadow(0 1px 0 rgba(0,0,0,.2));
-}
-.norea-nav{
-  display: flex;
-  gap: 18px;
-  justify-content: center;
-}
-.norea-nav a{
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: .3px;
-  padding: 6px 8px;
-  border-radius: 8px;
-  transition: background .2s ease, color .2s ease, transform .2s ease;
-}
-.norea-nav a:hover{
-  background: rgba(255,255,255,0.08);
-  transform: translateY(-1px);
-}
-
-.norea-cart{
-  justify-self: end;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--gold);
-  color: var(--black);
-  border: 0;
-  border-radius: 10px;
-  padding: 8px 12px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: transform .15s ease, box-shadow .15s ease, background .2s ease;
-}
-.norea-cart:hover{
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(0,0,0,.15);
-  background: #a88f61;
-}
-.norea-cart-sep{ opacity:.6; }
-.norea-cart-total{ font-variant-numeric: tabular-nums; }
-
-/* Petite sécurité mobile */
-@media (max-width: 820px){
-  .norea-top{
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto;
-  }
-  .norea-logo{ grid-column: 1 / 2; }
-  .norea-cart{ grid-column: 2 / 3; }
-  .norea-nav{
-    grid-column: 1 / -1;
-    justify-content: space-between;
-    gap: 10px;
-    flex-wrap: wrap;
-    padding-top: 8px;
-  }
-  .norea-nav a{ padding: 8px 10px; }
-}
-/* Bouton WhatsApp flottant */
-.wa-float {
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: #25D366; /* vert WhatsApp */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 18px rgba(0,0,0,.25);
-  transition: transform .15s ease, box-shadow .15s ease;
-  z-index: 9999;
-}
-.wa-float:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,.3); }
-.wa-float svg { width: 28px; height: 28px; fill: #fff; }
-@media (max-width: 480px) {
-  .wa-float { right: 12px; bottom: 12px; width: 52px; height: 52px; }
-  .wa-float svg { width: 26px; height: 26px; }
-}
-/* Bandeau promo */
-.top-banner {
-  background: #e8d7b7;
-  color: #111;
-  text-align: center;
-  font-size: 14px;
-  padding: 10px 0;
-  font-weight: 500;
-  letter-spacing: 0.8px;
-  border-bottom: 1px solid #d9c8a9;
-}
-/* Liens neutres (couleur du texte, pas de bleu) */
-a { color: inherit; text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-/* Dans les cartes produits */
-.product a { color: inherit; }
-/* Image page produit : taille raisonnable + centrée */
-.product-hero, .p-media img {
-  max-width: 480px;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto 16px;
-  border-radius: 8px;
-}
-
-/* Mise en page propre de la fiche produit si tu as un conteneur */
-.product-detail {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 16px;
-}
-/* Liens neutres (plus de bleu souligné) */
-a { color: inherit; text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-/* Fiche produit */
-.product-detail {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 16px;
-}
-.product-hero {
-  max-width: 480px;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto 16px;
-  border-radius: 8px;
-}
-.price { font-weight: 600; margin: 8px 0 16px; }
-.btn {
-  display: inline-block;
-  padding: 12px 18px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
+.toast.show{ opacity: 1; }
