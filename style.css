@@ -311,3 +311,93 @@ html, body { width:100%; max-width:100%; overflow-x:hidden; }
   --ink:#0f0f13;         /* noir profond doux pour fonds */
 }
 .page-lookbook .hero--dark{ background: linear-gradient(180deg,#0f0f13 0%, #121318 100%); color:var(--cream); }
+/* --- Sécurité globale --- */
+html, body { width:100%; max-width:100%; overflow-x:hidden; }
+[hidden] { display:none !important; }
+.no-scroll { overflow:hidden; }
+
+/* --- Hero Lookbook (un peu plus compact) --- */
+.page-lookbook .hero--tight { padding-block: 48px; }
+.page-lookbook .hero-title { letter-spacing: .03em; }
+
+/* --- Grille Lookbook --- */
+.lb-grid{
+  --gap: 24px;
+  display:grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(3, 1fr);
+  align-items:start;
+  margin-block: 32px 64px;
+}
+@media (max-width: 1024px){
+  .lb-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px){
+  .lb-grid{ grid-template-columns: 1fr; }
+}
+
+/* Tuile */
+.lb-item{
+  display:block;
+  position:relative;
+  border-radius: 12px;
+  overflow:hidden;
+  background:#111;
+  /* ombre douce couture */
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+.lb-item img{
+  display:block;
+  width:100%;
+  height: 48vh;              /* ratio élégant, images homogènes */
+  min-height: 320px;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .5s ease;
+  will-change: transform;
+}
+.lb-item:hover img{ transform: scale(1.03); }
+
+/* --- Lightbox --- */
+.lb-backdrop{
+  position:fixed;
+  inset:0;
+  background: rgba(0,0,0,.75);
+  backdrop-filter: blur(2px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index: 9999;             /* au-dessus de tout */
+  padding: 24px;
+}
+.lb-img{
+  max-width: min(92vw, 1200px);
+  max-height: 86vh;
+  width:auto; height:auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+}
+.lb-close{
+  position: absolute;
+  top: 20px; right: 24px;
+  width: 40px; height: 40px;
+  border:0; border-radius: 999px;
+  background: rgba(255,255,255,.12);
+  color: #fff; font-size: 26px; line-height: 1;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: background .2s ease;
+}
+.lb-close:hover{ background: rgba(255,255,255,.22); }
+
+/* --- Header double (au cas où) --- */
+.site-header + .site-header { display:none !important; }
+
+/* --- Ton palette luxe (si besoin d’un rappel) --- */
+:root{
+  --cream:#F5EFE6;
+  --black:#000;
+  --gold:#D8C7A1;
+  --ink:#0f0f13;         /* noir profond doux pour fonds */
+}
+.page-lookbook .hero--dark{ background: linear-gradient(180deg,#0f0f13 0%, #121318 100%); color:var(--cream); }
