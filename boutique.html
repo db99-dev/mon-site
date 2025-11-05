@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Boutique — NORÉA</title>
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Snipcart v3 (Test public key) -->
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.css" />
+  <script async src="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.js"></script>
+</head>
+
+<body>
+<header class="header">
+  <div class="logo">NORÉA</div>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="boutique.html" class="active">Boutique</a>
+    <a href="lookbook.html">Lookbook</a>
+    <a href="apropos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a class="panier-btn snipcart-checkout">Panier</a>
+  </nav>
+</header>
+
+<section class="container">
+  <h1 class="page-title">Nos produits</h1>
+
+  <div class="grid products">
+    <!-- Abaya -->
+    <article class="card">
+      <figure class="card-media">
+        <img src="assets/abaya.PNG" alt="Abaya noire NORÉA" loading="lazy">
+      </figure>
+      <div class="card-body">
+        <h3 class="card-title">Abaya noire</h3>
+        <p class="card-price">70,00 €</p>
+
+        <div class="variants">
+          <label>Taille</label>
+          <select id="abaya-size">
+            <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+          </select>
+        </div>
+
+        <button
+          class="btn snipcart-add-item"
+          data-item-id="abaya-noire"
+          data-item-name="Abaya noire"
+          data-item-price="70.00"
+          data-item-url="/boutique.html"
+          data-item-description="Abaya coupe élégante, tissu premium."
+          data-item-image="/assets/abaya.PNG"
+          data-item-custom1-name="Taille"
+          data-item-custom1-options="XS|S|M|L|XL"
+          data-item-custom1-value="XS"
+          onclick="document.querySelector('[data-config-hide-cart-when-adding=true]') && event.stopPropagation();">
+          Ajouter au panier
+        </button>
+      </div>
+    </article>
+
+    <!-- Voile -->
+    <article class="card">
+      <figure class="card-media">
+        <img src="assets/voile.PNG" alt="Voile noir NORÉA" loading="lazy">
+      </figure>
+      <div class="card-body">
+        <h3 class="card-title">Voile</h3>
+        <p class="card-price">25,00 €</p>
+
+        <div class="variants">
+          <label>Couleur</label>
+          <select id="voile-color">
+            <option>Noir</option><option>Beige (précommande)</option>
+          </select>
+        </div>
+
+        <button
+          class="btn snipcart-add-item"
+          data-item-id="voile"
+          data-item-name="Voile"
+          data-item-price="25.00"
+          data-item-url="/boutique.html"
+          data-item-description="Voile fluide et opaque, finition couture."
+          data-item-image="/assets/voile.PNG"
+          data-item-custom1-name="Couleur"
+          data-item-custom1-options="Noir|Beige (précommande)+10.00"
+          data-item-custom1-value="Noir">
+          Ajouter au panier
+        </button>
+      </div>
+    </article>
+
+    <!-- Sac -->
+    <article class="card">
+      <figure class="card-media">
+        <img src="assets/sac.PNG" alt="Sac NORÉA" loading="lazy">
+      </figure>
+      <div class="card-body">
+        <h3 class="card-title">Sac</h3>
+        <p class="card-price">50,00 €</p>
+
+        <button
+          class="btn snipcart-add-item"
+          data-item-id="sac"
+          data-item-name="Sac"
+          data-item-price="50.00"
+          data-item-url="/boutique.html"
+          data-item-description="Sac minimal, détails métalliques discrets."
+          data-item-image="/assets/sac.PNG">
+          Ajouter au panier
+        </button>
+      </div>
+    </article>
+  </div>
+
+  <p class="note-livraison">
+    <strong>Livraison Mondial Relay offerte dès 59€</strong> — Colissimo domicile disponible.
+  </p>
+</section>
+
+<footer>
+  <p>© NORÉA — Maison de couture pudique</p>
+</footer>
+
+<!-- Snipcart container: empêche l’ouverture automatique du panier -->
+<div hidden
+  id="snipcart"
+  data-api-key="N2M3N2Y0ZDYtZjY2MC00MjhjLTllY2UtM2U3ZDUzZDI5YjE3NjM4OTc1NDg3NDgyNjUxMzU5"
+  data-config-add-product-behavior="none"
+  data-config-hide-cart-when-adding="true">
+</div>
+
+<script>
+  // Synchronise la valeur de l’option choisie avec Snipcart avant l’ajout
+  const bindings = [
+    {select:'#abaya-size', attr:'data-item-custom1-value'},
+    {select:'#voile-color', attr:'data-item-custom1-value'}
+  ];
+  bindings.forEach(b => {
+    const sel = document.querySelector(b.select);
+    if(!sel) return;
+    sel.addEventListener('change', ()=>{
+      const btn = sel.closest('.card').querySelector('.snipcart-add-item');
+      btn.setAttribute(b.attr, sel.value);
+    });
+  });
+</script>
+
+</body>
+</html>
