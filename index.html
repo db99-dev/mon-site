@@ -1,97 +1,119 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NORÉA — Lookbook</title>
 
-  <title>NORÉA — Maison de voiles & abayas premium</title>
-  <meta name="description" content="NORÉA : abayas & voiles premium. Luxe discret, lignes maîtrisées, matières nobles. Livraison offerte dès 59€." />
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://maison-norea.fr/" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="NORÉA" />
-  <meta property="og:title" content="NORÉA — Maison de voiles & abayas premium" />
-  <meta property="og:description" content="Luxe discret, élégance & pudeur. Abayas & voiles premium conçus pour durer." />
-  <meta property="og:url" content="https://maison-norea.fr/" />
-  <meta property="og:image" content="https://maison-norea.fr/assets/Logo.jpg" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="NORÉA — Maison de voiles & abayas premium" />
-  <meta name="twitter:description" content="Luxe discret, élégance & pudeur." />
-  <meta name="twitter:image" content="https://maison-norea.fr/assets/Logo.jpg" />
-
-  <!-- Perf -->
-  <link rel="preconnect" href="https://cdn.snipcart.com" crossorigin>
-  <link rel="dns-prefetch" href="//cdn.snipcart.com">
-
-  <!-- Favicons -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico?v=9">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=9">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png?v=9">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v=9">
-
-  <!-- Fonts + CSS global -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- Snipcart (laisser tel quel si présent sur la page Boutique) -->
-  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.css" />
-  <script async src="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.js"></script>
+  <meta name="description" content="Lookbook NORÉA — Une vision discrète du luxe. Lignes maîtrisées, matières nobles.">
+  <link rel="icon" href="/favicon.ico?v=8">
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Organization",
-  "name":"NORÉA",
-  "url":"https://maison-norea.fr/",
-  "logo":"https://maison-norea.fr/assets/Logo.jpg",
-  "sameAs":["https://instagram.com/maison.norea"],
-  "brand":{"@type":"Brand","name":"NORÉA"}
-}
-</script>
-  
-    <body>
-<header class="header">
-    <div class="logo">NORÉA</div>
-    <nav>
-        <a href="index.html" class="active">Accueil</a>
+<body class="page-lookbook">
+  <!-- HEADER (unique) -->
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="index.html" aria-label="NORÉA">NORÉA</a>
+      <nav class="site-nav">
+        <a href="index.html">Accueil</a>
         <a href="boutique.html">Boutique</a>
-        <a href="lookbook.html">Lookbook</a>
-        <a href="apropos.html">À propos</a>
+        <a href="lookbook.html" aria-current="page">Lookbook</a>
+        <a href="a-propos.html">À propos</a>
         <a href="contact.html">Contact</a>
-        <a class="panier-btn snipcart-checkout">Panier</a>
-    </nav>
-</header>
-
-<section class="hero">
-    <h1>NORÉA</h1>
-    <p>Abayas & voiles premium — élégance & pudeur.</p>
-    <a href="boutique.html" class="btn">Voir la collection</a>
-</section>
-
-<section class="values">
-    <div>
-        <h3>Élégance</h3>
-        <p>Luxe discret, lignes maîtrisées, matière noble.</p>
+        <a class="cart-link" href="#" onclick="return false;">Panier</a>
+      </nav>
     </div>
-    <div>
-        <h3>Pudeur</h3>
-        <p>Une beauté qui se protège, un style qui s’affirme.</p>
-    </div>
-    <div>
-        <h3>Héritage</h3>
-        <p>Un vêtement qui relie le cœur, le corps et la foi.</p>
-    </div>
-</section>
+  </header>
 
-<footer>
-    <p>© NORÉA — Maison de couture pudique</p>
-</footer>
+  <!-- HERO -->
+  <section class="hero hero--dark hero--tight">
+    <div class="container">
+      <h1 class="hero-title">Lookbook</h1>
+      <p class="sub">Une vision discrète du luxe. Lignes maîtrisées, matières nobles.</p>
+    </div>
+  </section>
 
+  <!-- GALERIE -->
+  <main class="container lookbook-main">
+    <div class="lb-grid" aria-live="polite">
+      <!-- Tuile 1 -->
+      <figure class="lb-item">
+        <img src="assets/abaya.PNG" alt="Abaya noire NORÉA" loading="lazy">
+      </figure>
+      <!-- Tuile 2 -->
+      <figure class="lb-item">
+        <img src="assets/sac.PNG" alt="Sac NORÉA" loading="lazy">
+      </figure>
+      <!-- Tuile 3 -->
+      <figure class="lb-item">
+        <img src="assets/voile.PNG" alt="Voile NORÉA" loading="lazy">
+      </figure>
+      <!-- Ajoute d’autres <figure class="lb-item"><img …></figure> si besoin -->
+    </div>
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div class="lb-backdrop" hidden>
+    <button class="lb-close" aria-label="Fermer">×</button>
+    <img class="lb-img" alt="">
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>À propos</h4>
+        <p>NORÉA, maison de pièces pudiques : abayas & voiles premium.</p>
+      </div>
+      <div>
+        <h4>Liens</h4>
+        <ul class="list-plain">
+          <li><a href="livraison.html">Livraison</a></li>
+          <li><a href="retours.html">Retours</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="list-plain">
+          <li><a href="https://instagram.com/maison.norea" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="mailto:norea.pro@hotmail.com">norea.pro@hotmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script lightbox (simple & fluide) -->
+  <script>
+    (function () {
+      const backdrop = document.querySelector('.lb-backdrop');
+      const fullImg  = document.querySelector('.lb-img');
+      const closeBtn = document.querySelector('.lb-close');
+
+      const open = (src, alt) => {
+        fullImg.src = src;
+        fullImg.alt = alt || '';
+        backdrop.removeAttribute('hidden');
+        document.body.classList.add('no-scroll');
+      };
+      const close = () => {
+        backdrop.setAttribute('hidden','');
+        document.body.classList.remove('no-scroll');
+        fullImg.removeAttribute('src');
+      };
+
+      document.addEventListener('click', (e) => {
+        const img = e.target.closest('.lb-item img');
+        if (!img) return;
+        open(img.src, img.alt);
+      });
+      backdrop.addEventListener('click', (e) => {
+        if (e.target === backdrop) close();
+      });
+      closeBtn.addEventListener('click', close);
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+    })();
+  </script>
 </body>
-</html> 
+</html>
