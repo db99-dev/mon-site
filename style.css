@@ -267,3 +267,19 @@ a:hover { text-decoration: underline; }
 
 /* Dans les cartes produits */
 .product a { color: inherit; }
+/* Image page produit : taille raisonnable + centrée */
+.product-hero, .p-media img {
+  max-width: 480px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 16px;
+  border-radius: 8px;
+}
+
+/* Mise en page propre de la fiche produit si tu as un conteneur */
+.product-detail {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+}
