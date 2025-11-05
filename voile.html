@@ -1,58 +1,21 @@
 <!doctype html><html lang="fr"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Voile – NORÉA</title>
-<link rel="icon" href="/favicon.ico?v=8">
+<link rel="icon" href="/favicon.ico?v=9">
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.css">
-<script async src="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.js"></script>
-  <!-- Toast -->
-<div id="toast" aria-live="polite" aria-atomic="true"></div>
-
-<style>
-#toast{
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  z-index: 9999;
-  font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-}
-.toast-item{
-  background:#111;
-  color:#fff;
-  padding:10px 14px;
-  border-radius:8px;
-  box-shadow:0 6px 20px rgba(0,0,0,.25);
-  margin-top:8px;
-  font-size:14px;
-  opacity:0;
-  transform:translateY(-6px);
-  animation: toast-in .18s ease-out forwards;
-}
-@keyframes toast-in{
-  to{opacity:1; transform:translateY(0)}
-}
-</style>
 
 <script>
-function showToast(msg){
-  const t = document.createElement('div');
-  t.className = 'toast-item';
-  t.textContent = msg;
-  document.getElementById('toast').appendChild(t);
-  setTimeout(()=>{ t.style.opacity='0'; t.style.transition='opacity .2s';
-    setTimeout(()=> t.remove(), 220);
-  }, 1800);
-}
-document.addEventListener('snipcart.ready', () => {
-  Snipcart.events.on('item.added', () => showToast('Ajouté au panier ✅'));
-});
-</script></head><body>
-<div
-  hidden
-  id="snipcart"
-  data-api-key="N2M3N2Y0ZDYtZjY2MC00MjhjLTllY2UtM2U3ZDUzZDI5YjE3NjM4OTc1NDg3NDgyNjUxMzU5"
-  data-config-add-product-behavior="none">
-</div>
+  window.SnipcartSettings = {
+    publicApiKey: "N2M3N2Y0ZDYtZjY2MC00MjhjLTllY2UtM2U3ZDUzZDI5YjE3NjM4OTc1NDg3NDgyNjUxMzU5",
+    addProductBehavior: "none",
+    currency: "EUR"
+  };
+</script>
+<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.css">
+<script async src="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.js"></script>
+</head><body>
+<div hidden id="snipcart"></div>
+<div id="toast" aria-live="polite" aria-atomic="true"></div>
 
 <header class="norea-header"><div class="container header-inner">
   <a href="/" class="brand"><img src="assets/Logo.jpg" class="brand-logo" alt=""><span class="brand-name">NORÉA</span></a>
@@ -60,13 +23,14 @@ document.addEventListener('snipcart.ready', () => {
   <button class="btn btn-cart snipcart-checkout">Panier · <span class="snipcart-items-count">0</span></button>
 </div></header>
 
-<main class="container" style="margin-top:24px">
-  <article class="product" style="display:grid;grid-template-columns:1.1fr .9fr;gap:20px">
+<main class="container product-page">
+  <article class="product product-detail-layout">
     <figure class="p-media"><img src="assets/voile.PNG" alt="Voile"></figure>
     <div class="p-body">
       <h1 class="p-title">Voile</h1>
       <p class="price">25,00 €</p>
       <p>Voile premium, doux et opaque.</p>
+
       <button
         class="btn btn-add snipcart-add-item"
         data-item-id="voile"
@@ -79,9 +43,22 @@ document.addEventListener('snipcart.ready', () => {
         data-item-custom1-name="Couleur"
         data-item-custom1-options="Noir|Beige"
       >Ajouter au panier</button>
-      <p><a href="/#boutique">← Continuer vos achats</a></p>
+
+      <div class="extras">
+        <p>📦 Livraison : Mondial Relay offert dès 59€ · Colissimo dispo</p>
+        <p>↩️ Retours sous 14 jours</p>
+      </div>
+
+      <p class="backlink"><a href="/#boutique">← Continuer vos achats</a></p>
     </div>
   </article>
 </main>
 
+<script>
+document.addEventListener('snipcart.ready',()=> {
+  const root=document.getElementById('toast');
+  const toast=(m)=>{const t=document.createElement('div');t.className='toast-item';t.textContent=m;root.appendChild(t);setTimeout(()=>{t.style.opacity='0';t.style.transition='opacity .2s';setTimeout(()=>t.remove(),220)},1600)};
+  Snipcart.events.on('item.added',()=>toast('Ajouté au panier ✅'));
+});
+</script>
 </body></html>
