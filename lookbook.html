@@ -5,13 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>NORÉA — Lookbook</title>
 
-  <!-- Meta -->
-  <meta name="description" content="Lookbook NORÉA — Une vision discrète du luxe. Lignes maîtrisées, matières nobles." />
-  <link rel="icon" href="/favicon.ico?v=8" />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Lookbook NORÉA — Une vision discrète du luxe. Lignes maîtrisées, matières nobles.">
+  <link rel="icon" href="/favicon.ico?v=8">
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="page-lookbook">
   <!-- HEADER (unique) -->
   <header class="site-header">
     <div class="container header-row">
@@ -28,31 +27,33 @@
   </header>
 
   <!-- HERO -->
-  <section class="hero hero--dark">
+  <section class="hero hero--dark hero--tight">
     <div class="container">
-      <h1>Lookbook</h1>
+      <h1 class="hero-title">Lookbook</h1>
       <p class="sub">Une vision discrète du luxe. Lignes maîtrisées, matières nobles.</p>
     </div>
   </section>
 
   <!-- GALERIE -->
-  <main class="container" style="padding-block:48px;">
-    <div class="lb-grid">
-      <!-- Chaque tuile -->
-      <a class="lb-item" href="assets/abaya.PNG" data-full="assets/abaya.PNG">
+  <main class="container lookbook-main">
+    <div class="lb-grid" aria-live="polite">
+      <!-- Tuile 1 -->
+      <figure class="lb-item">
         <img src="assets/abaya.PNG" alt="Abaya noire NORÉA" loading="lazy">
-      </a>
-      <a class="lb-item" href="assets/sac.PNG" data-full="assets/sac.PNG">
+      </figure>
+      <!-- Tuile 2 -->
+      <figure class="lb-item">
         <img src="assets/sac.PNG" alt="Sac NORÉA" loading="lazy">
-      </a>
-      <a class="lb-item" href="assets/voile.PNG" data-full="assets/voile.PNG">
+      </figure>
+      <!-- Tuile 3 -->
+      <figure class="lb-item">
         <img src="assets/voile.PNG" alt="Voile NORÉA" loading="lazy">
-      </a>
-      <!-- Ajoute d'autres images ici si tu veux -->
+      </figure>
+      <!-- Ajoute d’autres <figure class="lb-item"><img …></figure> si besoin -->
     </div>
   </main>
 
-  <!-- LIGHTBOX (overlay) -->
+  <!-- LIGHTBOX -->
   <div class="lb-backdrop" hidden>
     <button class="lb-close" aria-label="Fermer">×</button>
     <img class="lb-img" alt="">
@@ -63,7 +64,7 @@
     <div class="container footer-grid">
       <div>
         <h4>À propos</h4>
-        <p>NORÉA est une maison dédiée à la mode pudique : abayas & voiles premium.</p>
+        <p>NORÉA, maison de pièces pudiques : abayas & voiles premium.</p>
       </div>
       <div>
         <h4>Liens</h4>
@@ -83,34 +84,35 @@
     </div>
   </footer>
 
-  <!-- Script lightbox -->
+  <!-- Script lightbox (simple & fluide) -->
   <script>
     (function () {
       const backdrop = document.querySelector('.lb-backdrop');
-      const imgFull  = document.querySelector('.lb-img');
+      const fullImg  = document.querySelector('.lb-img');
       const closeBtn = document.querySelector('.lb-close');
 
-      function hide() {
-        backdrop.setAttribute('hidden', '');
-        document.body.classList.remove('no-scroll');
-        imgFull.removeAttribute('src');
-      }
-      hide();
-
-      document.addEventListener('click', (e) => {
-        const tile = e.target.closest('.lb-item');
-        if (!tile) return;
-        e.preventDefault();
-        const src = tile.getAttribute('data-full') || tile.href;
-        imgFull.src = src;
+      const open = (src, alt) => {
+        fullImg.src = src;
+        fullImg.alt = alt || '';
         backdrop.removeAttribute('hidden');
         document.body.classList.add('no-scroll');
-      });
+      };
+      const close = () => {
+        backdrop.setAttribute('hidden','');
+        document.body.classList.remove('no-scroll');
+        fullImg.removeAttribute('src');
+      };
 
-      function closeLb() { hide(); }
-      closeBtn.addEventListener('click', closeLb);
-      backdrop.addEventListener('click', (e) => { if (e.target === backdrop) closeLb(); });
-      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); });
+      document.addEventListener('click', (e) => {
+        const img = e.target.closest('.lb-item img');
+        if (!img) return;
+        open(img.src, img.alt);
+      });
+      backdrop.addEventListener('click', (e) => {
+        if (e.target === backdrop) close();
+      });
+      closeBtn.addEventListener('click', close);
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
     })();
   </script>
 </body>
