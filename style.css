@@ -202,3 +202,5 @@ footer {
 
 /* petit badge actif dans la nav */
 .norea-nav a.active { color: #D8C7A1; }
+/* Force l'attribut [hidden] à vraiment cacher l'élément */
+[hidden] { display: none !important; }
