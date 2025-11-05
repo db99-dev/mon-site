@@ -1,59 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <title>Voile – Maison Noréa</title>
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Voile – Maison Noréa</title>
+
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.css" />
+  <script async src="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.js"></script>
 </head>
 <body>
+  <main class="product-detail">
+    <img src="assets/voile.PNG" alt="Voile NORÉA" class="product-hero">
 
-<header class="norea-header">
-  <div class="norea-top">
-    <a href="index.html#hero" class="norea-logo">
-      <img src="assets/logo.png" alt="Maison Noréa" />
-    </a>
-  </div>
-  <nav class="norea-nav">
-    <a href="index.html#">Accueil</a>
-    <a href="index.html#boutique">Boutique</a>
-    <a href="a-propos.html">À propos</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html">Contact</a>
-    <button class="snipcart-checkout">Panier</button>
-  </nav>
-</header>
-
-<main class="product-page">
-  <div class="product-gallery">
-    <img src="assets/voile.PNG" alt="Voile" />
-  </div>
-
-  <div class="product-info">
     <h1>Voile</h1>
-    <p class="product-price">25,00 €</p>
+    <p class="price">25,00 €</p>
 
     <button
-      class="snipcart-add-item"
-      data-item-id="voile-classique"
+      class="btn snipcart-add-item"
+      data-item-id="voile"
       data-item-name="Voile"
       data-item-price="25.00"
-      data-item-url="https://maison-norea.fr/voile.html"
-      data-item-image="assets/voile.PNG">
+      data-item-url="/voile.html"
+      data-item-image="/assets/voile.PNG"
+      data-item-description="Voile léger et opaque, tombé fluide."
+      data-item-stackable="true"
+      data-item-custom1-name="Couleur"
+      data-item-custom1-options="Noir|Beige"
+    >
       Ajouter au panier
     </button>
 
     <h2>Description</h2>
-    <p>Voile opaque, tombé fluide et léger. Longueur courte, couleur noir.</p>
+    <p>Voile léger et opaque, idéal au quotidien.</p>
 
-    <h3>Livraison & retours</h3>
+    <h2>Livraison & retours</h2>
     <ul>
       <li>Livraison Mondial Relay offerte dès 59€</li>
       <li>Colissimo domicile disponible</li>
       <li>Retours sous 14 jours</li>
     </ul>
-  </div>
-</main>
-
+  </main>
 </body>
 </html>
