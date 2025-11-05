@@ -105,3 +105,51 @@ a:hover{text-decoration:underline}
 #toast{position:fixed;top:16px;right:16px;z-index:9999}
 .toast-item{background:#111;color:#fff;padding:10px 14px;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.25);margin-top:8px;font-size:14px;opacity:0;transform:translateY(-6px);animation:toast-in .18s ease-out forwards}
 @keyframes toast-in{to{opacity:1;transform:translateY(0)}}
+.footer {
+  background: #111;
+  color: #eee;
+  padding: 60px 20px;
+  margin-top: 80px;
+}
+
+.footer a {
+  color: #eee;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #d4b686;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-top h4 {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.footer-top ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.footer-bottom nav {
+  margin-bottom: 15px;
+}
+
+.footer-bottom nav a {
+  margin: 0 10px;
+  font-size: 14px;
+}
