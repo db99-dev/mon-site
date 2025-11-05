@@ -252,11 +252,12 @@ summary{ cursor:pointer; font-weight:700 }
 }
 /* Bandeau promo */
 .top-banner {
-  background: #e8d7b7; /* couleur beige doré douce */
+  background: #e8d7b7;
   color: #111;
   text-align: center;
   font-size: 14px;
-  padding: 8px 0;
+  padding: 10px 0;
   font-weight: 500;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
+  border-bottom: 1px solid #d9c8a9;
 }
