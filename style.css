@@ -216,3 +216,8 @@ html, body { width:100%; max-width:100%; overflow-x:hidden; }
 
 /* 4) Sécurité : images responsives (évite qu’une image déborde et crée une colonne à droite) */
 img { max-width: 100%; height: auto; display: block; }
+/* Empêche une barre horizontale fantôme */
+html, body { width:100%; max-width:100%; overflow-x:hidden; }
+
+/* Si, par erreur, un 2e header apparaît : on le masque */
+.site-header + .site-header { display: none !important; }
