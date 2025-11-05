@@ -127,3 +127,78 @@ footer {
   background:#D8C7A1; transform:scaleX(0); transform-origin:left; transition:transform .25s ease;
 }
 .header nav a:hover::after { transform:scaleX(1); }
+/* ===== Lookbook ===== */
+.lookbook-hero {
+  background: #0b0f12; /* noir profond légèrement bleuté */
+  padding: 72px 0 56px;
+  color: #F5EFE6;
+  text-align: center;
+}
+.lookbook-hero h1 {
+  font-family: "Georgia", "Times New Roman", serif;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  font-size: clamp(32px, 5vw, 48px);
+  margin: 0 0 8px;
+}
+.lookbook-hero p {
+  opacity: .9;
+  margin: 0;
+}
+
+/* grille responsive */
+.grid-lookbook {
+  margin: 48px auto 80px;
+  columns: 1;
+  column-gap: 16px;
+}
+@media (min-width: 640px) { .grid-lookbook { columns: 2; } }
+@media (min-width: 980px) { .grid-lookbook { columns: 3; } }
+
+.grid-lookbook .lb-item { 
+  break-inside: avoid; 
+  margin: 0 0 16px; 
+  border-radius: 10px; 
+  overflow: hidden; 
+  background:#0b0f12;
+}
+.grid-lookbook img {
+  width: 100%; display: block;
+  transform: scale(1.02);
+  transition: transform .5s ease, opacity .4s ease;
+  opacity: .96;
+  cursor: zoom-in;
+}
+.grid-lookbook img:hover { transform: scale(1.06); opacity: 1; }
+
+/* lightbox */
+.lb-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.82);
+  display: grid; place-items: center;
+  z-index: 9999;
+}
+.lb-img {
+  max-width: min(92vw, 1200px);
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 30px 120px rgba(0,0,0,.6);
+}
+.lb-close {
+  position: fixed; top: 18px; right: 22px;
+  font-size: 32px; line-height: 32px;
+  width: 40px; height: 40px; border-radius: 50%;
+  border: none; cursor: pointer;
+  color: #0b0f12; background: #F5EFE6;
+  box-shadow: 0 10px 40px rgba(0,0,0,.3);
+}
+.no-scroll { overflow: hidden; }
+
+/* footer minimal luxueux */
+.footer-min { background: #0b0f12; color: #F5EFE6; padding: 28px 0; }
+.footer-min-inner { display: flex; gap: 16px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.footer-min a { color: #D8C7A1; text-decoration: none; opacity: .9; }
+.footer-min a:hover { opacity: 1; text-decoration: underline; }
+
+/* petit badge actif dans la nav */
+.norea-nav a.active { color: #D8C7A1; }
