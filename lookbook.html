@@ -87,36 +87,41 @@
 
   <!-- Snipcart JS -->
   <script async src="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.js"></script>
+  
+ <script>
+  (function () {
+    const backdrop = document.querySelector('.lb-backdrop');
+    const imgFull  = document.querySelector('.lb-img');
+    const closeBtn = document.querySelector('.lb-close');
 
-  <!-- Lightbox JS -->
-  <script>
-    (function () {
-      const backdrop = document.querySelector('.lb-backdrop');
-      const imgFull   = document.querySelector('.lb-img');
-      const closeBtn  = document.querySelector('.lb-close');
+    // Assure-toi que c'est bien caché au chargement
+    function hideOnStart() {
+      if (backdrop) backdrop.setAttribute('hidden', '');
+      document.body.classList.remove('no-scroll');
+      if (imgFull) imgFull.removeAttribute('src');
+    }
+    hideOnStart();
 
-      document.addEventListener('click', (e) => {
-        const img = e.target.closest('.lb-item img');
-        if (!img) return;
-        const src = img.getAttribute('data-full') || img.src;
-        imgFull.src = src;
-        backdrop.hidden = false;
-        document.body.classList.add('no-scroll');
-      });
+    document.addEventListener('click', (e) => {
+      const img = e.target.closest('.lb-item img');
+      if (!img) return;
+      const src = img.getAttribute('data-full') || img.src;
+      imgFull.src = src;
+      backdrop.removeAttribute('hidden');
+      document.body.classList.add('no-scroll');
+    });
 
-      function closeLb() {
-        backdrop.hidden = true;
-        imgFull.src = '';
-        document.body.classList.remove('no-scroll');
-      }
-      closeBtn.addEventListener('click', closeLb);
-      backdrop.addEventListener('click', (e) => {
-        if (e.target === backdrop) closeLb();
-      });
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeLb();
-      });
-    })();
-  </script>
+    function closeLb() {
+      hideOnStart();
+    }
+    closeBtn.addEventListener('click', closeLb);
+    backdrop.addEventListener('click', (e) => {
+      if (e.target === backdrop) closeLb();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLb();
+    });
+  })();
+</script>
 </body>
 </html>
