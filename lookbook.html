@@ -1,119 +1,68 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NORÉA — Lookbook</title>
+  <title>Lookbook — NORÉA</title>
 
-  <meta name="description" content="Lookbook NORÉA — Une vision discrète du luxe. Lignes maîtrisées, matières nobles.">
-  <link rel="icon" href="/favicon.ico?v=8">
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico?v=8" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Snipcart -->
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.css" />
+  <script async src="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.js"></script>
 </head>
-
-<body class="page-lookbook">
-  <!-- HEADER (unique) -->
+<body>
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-row">
-      <a class="brand" href="index.html" aria-label="NORÉA">NORÉA</a>
-      <nav class="site-nav">
+      <a class="brand" href="index.html">NORÉA</a>
+      <nav class="nav">
         <a href="index.html">Accueil</a>
         <a href="boutique.html">Boutique</a>
-        <a href="lookbook.html" aria-current="page">Lookbook</a>
-        <a href="a-propos.html">À propos</a>
+        <a class="active" href="lookbook.html">Lookbook</a>
+        <a href="aprepos.html">À propos</a>
         <a href="contact.html">Contact</a>
-        <a class="cart-link" href="#" onclick="return false;">Panier</a>
+        <button class="btn-cart snipcart-checkout">Panier</button>
       </nav>
     </div>
   </header>
 
   <!-- HERO -->
-  <section class="hero hero--dark hero--tight">
+  <section class="page-hero">
     <div class="container">
-      <h1 class="hero-title">Lookbook</h1>
-      <p class="sub">Une vision discrète du luxe. Lignes maîtrisées, matières nobles.</p>
+      <h1>Lookbook</h1>
+      <p>Une vision discrète du luxe. Lignes maîtrisées, matières nobles.</p>
     </div>
   </section>
 
-  <!-- GALERIE -->
-  <main class="container lookbook-main">
-    <div class="lb-grid" aria-live="polite">
-      <!-- Tuile 1 -->
-      <figure class="lb-item">
-        <img src="assets/abaya.PNG" alt="Abaya noire NORÉA" loading="lazy">
-      </figure>
-      <!-- Tuile 2 -->
-      <figure class="lb-item">
-        <img src="assets/sac.PNG" alt="Sac NORÉA" loading="lazy">
-      </figure>
-      <!-- Tuile 3 -->
-      <figure class="lb-item">
-        <img src="assets/voile.PNG" alt="Voile NORÉA" loading="lazy">
-      </figure>
-      <!-- Ajoute d’autres <figure class="lb-item"><img …></figure> si besoin -->
+  <!-- GRILLE (sobre, sans lightbox pour 0 bug) -->
+  <main>
+    <div class="lookbook-grid">
+      <img src="assets/abaya.PNG" alt="Abaya Lina — plan large" loading="lazy">
+      <img src="assets/sac.PNG"   alt="Sac Sélène — détail bijouterie" loading="lazy">
+      <img src="assets/voile.PNG" alt="Voile Rameaux — texture" loading="lazy">
     </div>
   </main>
 
-  <!-- LIGHTBOX -->
-  <div class="lb-backdrop" hidden>
-    <button class="lb-close" aria-label="Fermer">×</button>
-    <img class="lb-img" alt="">
-  </div>
-
   <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <h4>À propos</h4>
-        <p>NORÉA, maison de pièces pudiques : abayas & voiles premium.</p>
-      </div>
-      <div>
-        <h4>Liens</h4>
-        <ul class="list-plain">
-          <li><a href="livraison.html">Livraison</a></li>
-          <li><a href="retours.html">Retours</a></li>
-          <li><a href="mentions-legales.html">Mentions légales</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul class="list-plain">
-          <li><a href="https://instagram.com/maison.norea" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="mailto:norea.pro@hotmail.com">norea.pro@hotmail.com</a></li>
-        </ul>
-      </div>
+    <div class="container footer-row">
+      <p>© NORÉA — Maison de couture pudique</p>
+      <nav class="footer-links">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Confidentialité</a>
+        <a href="cgv.html">CGV</a>
+        <a href="livraison.html">Livraison</a>
+        <a href="retours.html">Retours</a>
+      </nav>
     </div>
   </footer>
 
-  <!-- Script lightbox (simple & fluide) -->
-  <script>
-    (function () {
-      const backdrop = document.querySelector('.lb-backdrop');
-      const fullImg  = document.querySelector('.lb-img');
-      const closeBtn = document.querySelector('.lb-close');
-
-      const open = (src, alt) => {
-        fullImg.src = src;
-        fullImg.alt = alt || '';
-        backdrop.removeAttribute('hidden');
-        document.body.classList.add('no-scroll');
-      };
-      const close = () => {
-        backdrop.setAttribute('hidden','');
-        document.body.classList.remove('no-scroll');
-        fullImg.removeAttribute('src');
-      };
-
-      document.addEventListener('click', (e) => {
-        const img = e.target.closest('.lb-item img');
-        if (!img) return;
-        open(img.src, img.alt);
-      });
-      backdrop.addEventListener('click', (e) => {
-        if (e.target === backdrop) close();
-      });
-      closeBtn.addEventListener('click', close);
-      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
-    })();
-  </script>
+  <!-- Snipcart (hidden) -->
+  <div hidden id="snipcart"
+    data-api-key="N2M3N2Y0ZDYtZjY2MC00MjhjLTllY2UtM2U3ZDUzZDI5YjE3NjM4OTc1NDg3NDgyNjUxMzU5"
+    data-config-add-product-behavior="none"
+    data-config-modal-style="side"></div>
 </body>
 </html>
