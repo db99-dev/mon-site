@@ -89,3 +89,25 @@ body{
   .hero{padding:80px 0 56px}
   .hero h1{font-size:42px}
 }
+/* --- NORÉA | Finitions boutique & produits --- */
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; text-decoration-color: rgba(216,199,161,.7); }
+
+.product-card { background: #F5EFE6; border-radius: 12px; padding: 16px; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+.product-card img { width: 100%; border-radius: 10px; display:block; }
+.product-card .product-info { margin-top: 10px; }
+.product-card .price { font-weight: 600; margin: 6px 0 12px; }
+.product-link:focus { outline: 2px solid #D8C7A1; outline-offset: 4px; }
+
+.product-page { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; }
+.product-hero img { width: 100%; border-radius: 14px; background: #F5EFE6; }
+.product-details h1 { font-size: 2.2rem; margin: 0 0 .4rem; }
+.price.big { font-size: 1.25rem; margin-bottom: 1rem; }
+.select { padding: 10px 12px; border-radius: 8px; border: 1px solid #ddd; background: #fff; }
+.buy { display: grid; gap: 12px; max-width: 340px; margin: 12px 0 18px; }
+
+.btn { background: #D8C7A1; color: #000; border: none; padding: 12px 18px; border-radius: 10px; font-weight: 600; cursor:pointer; }
+.btn:hover { filter: brightness(0.95); }
+
+.shipping-note { margin-top: 28px; opacity: .8; }
+.main-nav a.active { border-bottom: 2px solid #D8C7A1; padding-bottom: 4px; }
