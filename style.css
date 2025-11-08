@@ -1,116 +1,139 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+/* ========== Design system NORÉA ========== */
+:root{
+  --cream:#F5EFE6;
+  --black:#000000;
+  --ink:#0E0F12;       /* fond header / sections sombres */
+  --gold:#D8C7A1;
+  --silver:#C7C7C7;
+  --text:#222;
+  --muted:#6b6b6b;
+  --card:#fff;
+  --radius:14px;
+  --shadow:0 8px 24px rgba(0,0,0,.08);
+  --font:"Libre Baskerville", "Times New Roman", serif;
+  --font-ui: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
 
-  <title>NORÉA — Maison de voiles & abayas premium</title>
-  <meta name="description" content="Abayas & voiles premium — élégance & pudeur.">
+/* Reset doux */
+*,*::before,*::after{box-sizing:border-box}
+html,body{padding:0;margin:0}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
 
-  <link rel="canonical" href="https://maison-norea.fr/" />
+/* Base */
+html{scroll-behavior:smooth}
+body{
+  background:var(--cream);
+  color:var(--text);
+  font:16px/1.6 var(--font-ui);
+}
 
-  <link rel="preconnect" href="https://cdn.snipcart.com" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.css" />
+/* Containers */
+.container{width:min(1120px, 92%);margin:auto}
 
-  <link rel="icon" href="/favicon.ico" />
-</head>
+/* Typo titres */
+h1,h2,h3,h4{font-family:var(--font);letter-spacing:.5px;color:#111;margin:0 0 .5rem}
+h1{font-size:clamp(36px, 5vw, 56px)}
+h2{font-size:clamp(28px, 3.5vw, 40px)}
+h3{font-size:clamp(20px, 2.4vw, 24px); color:#111}
+p{margin:0 0 1rem}
 
-<body>
+/* Boutons */
+.btn{
+  display:inline-block; padding:.8rem 1.25rem; border-radius:10px;
+  background:var(--gold); color:#111; font-weight:600; border:1px solid rgba(0,0,0,.1);
+  transition:transform .15s ease, box-shadow .2s ease, background .2s ease;
+  box-shadow:0 4px 14px rgba(0,0,0,.08)
+}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(0,0,0,.12)}
+.btn:active{transform:translateY(0)}
 
-<!-- HEADER -->
-<header class="norea-header">
-  <div class="container header-bar">
-    <a href="index.html" class="brand">NORÉA</a>
+/* ---------- Header ---------- */
+.norea-header{
+  position:sticky; top:0; z-index:1000;
+  background:var(--ink); color:#fff; border-bottom:1px solid rgba(255,255,255,.06)
+}
+.header-bar{
+  height:64px; display:flex; align-items:center; justify-content:space-between;
+}
+.brand{font-family:var(--font); font-size:22px; letter-spacing:2px}
+.nav a{
+  color:#eee; margin-left:22px; font-weight:600; position:relative; padding-bottom:6px
+}
+.nav a::after{
+  content:""; position:absolute; left:0; right:0; bottom:-2px; height:2px;
+  background:linear-gradient(90deg,var(--gold),transparent);
+  transform:scaleX(0); transform-origin:left; transition:transform .25s ease
+}
+.nav a:hover::after{transform:scaleX(1)}
 
-    <nav class="nav">
-      <a href="index.html">Accueil</a>
-      <a href="boutique.html">Boutique</a>
-      <a href="lookbook.html">Lookbook</a>
-      <a href="a-propos.html">À propos</a>
-      <a href="contact.html">Contact</a>
-      <a href="#" class="snipcart-checkout">Panier</a>
-    </nav>
-  </div>
-</header>
+/* ---------- Hero ---------- */
+.hero{
+  background:linear-gradient(180deg, #0E0F12 0%, #14161A 100%);
+  color:#fff; padding:88px 0 72px; text-align:center
+}
+.hero-center h1{letter-spacing:3px}
+.hero-center p{color:#D6D7DC; margin:.5rem 0 1.2rem}
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container hero-center">
-    <h1>NORÉA</h1>
-    <p>Abayas & voiles premium — élégance & pudeur.</p>
-    <a href="boutique.html" class="btn">Voir la collection</a>
-  </div>
-</section>
+/* ---------- Values ---------- */
+.values{padding:56px 0}
+.values-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px}
+.values-grid div{
+  background:var(--card); padding:22px; border-radius:var(--radius);
+  box-shadow:var(--shadow); border:1px solid rgba(0,0,0,.06)
+}
+.values-grid p{color:var(--muted)}
 
-<!-- VALEURS -->
-<section class="values">
-  <div class="container values-grid">
+/* ---------- Cards produits (si utilisés sur accueil) ---------- */
+.grid-3{display:grid; gap:28px; grid-template-columns:repeat(3,1fr)}
+.product{
+  background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow);
+  border:1px solid rgba(0,0,0,.06); overflow:hidden
+}
+.p-media img{width:100%; aspect-ratio:3/4; object-fit:cover}
+.p-body{padding:16px}
+.price{font-weight:700}
 
-    <div>
-      <h3>Élégance</h3>
-      <p>Luxe discret, lignes maîtrisées, matière noble.</p>
-    </div>
+/* ---------- Footer ---------- */
+.footer{background:var(--ink); color:#e9e9e9; margin-top:64px}
+.footer a{color:#e9e9e9}
+.footer-grid{
+  padding:36px 0; display:grid; gap:28px; grid-template-columns:2fr 1fr 1.2fr
+}
+.list-links{list-style:none; padding:0; margin:0}
+.list-links li{margin:.4rem 0}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.06); padding:14px 0 24px;
+  display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap
+}
+.footer-links a{margin-right:14px; color:#cfcfcf}
 
-    <div>
-      <h3>Pudeur</h3>
-      <p>Une beauté qui se protège. Un style affirmé.</p>
-    </div>
+/* ---------- Pages internes (lookbook, etc.) ---------- */
+.page-hero{
+  background:var(--ink); color:#fff; padding:70px 0 52px; text-align:center;
+  margin-bottom:28px
+}
+.lookbook-grid{
+  width:min(1200px,94%); margin:0 auto 60px;
+  display:grid; grid-template-columns:repeat(3,1fr); gap:18px
+}
+.lookbook-grid img{
+  width:100%; border-radius:10px; aspect-ratio:3/4; object-fit:cover;
+  box-shadow:var(--shadow); border:1px solid rgba(0,0,0,.06)
+}
 
-    <div>
-      <h3>Héritage</h3>
-      <p>Un vêtement qui relie le cœur, le corps et la foi.</p>
-    </div>
+/* ---------- Utilitaires ---------- */
+.muted{color:var(--muted)}
+.center{text-align:center}
 
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container footer-grid">
-
-    <div>
-      <h4>À propos</h4>
-      <p>NORÉA est une maison dédiée à la mode pudique : abayas & voiles premium.</p>
-    </div>
-
-    <div>
-      <h4>FAQ</h4>
-      <ul class="list-links">
-        <li><a href="livraison.html">Délais de livraison</a></li>
-        <li><a href="retours.html">Retours</a></li>
-        <li><a href="mentions-legales.html">Mentions légales</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h4>Contact</h4>
-      <ul class="list-links">
-        <li>Email : <a href="mailto:norea.pro@hotmail.com">norea.pro@hotmail.com</a></li>
-        <li>Instagram : <a href="https://instagram.com/maison.norea" target="_blank">@maison.norea</a></li>
-        <li>Téléphone : <a href="tel:+33698234296">+33 6 98 23 42 96</a></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div class="container footer-bottom">
-    <nav class="footer-links">
-      <a href="mentions-legales.html">Mentions légales</a>
-      <a href="cgv.html">CGV</a>
-      <a href="confidentialite.html">Politique de confidentialité</a>
-      <a href="livraison.html">Livraison</a>
-      <a href="retours.html">Retours</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <p>© NORÉA — Maison de couture pudique</p>
-  </div>
-</footer>
-
-<!-- SNIPCART -->
-<script async src="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.js"></script>
-<div hidden id="snipcart" data-api-key="N2M3N2Y0ZDYtZjY2MC00MjhjLTllY2UtM2U3ZDUzZDI5YjE3NjM4OTc1NDg3NDgyNjUxMzU5"></div>
-
-</body>
-</html>
+/* ---------- Responsive ---------- */
+@media (max-width:960px){
+  .values-grid{grid-template-columns:1fr}
+  .lookbook-grid{grid-template-columns:1fr 1fr}
+  .nav a{margin-left:14px}
+}
+@media (max-width:640px){
+  .lookbook-grid{grid-template-columns:1fr}
+  .header-bar{height:auto; padding:10px 0; gap:12px; flex-direction:column; align-items:flex-start}
+  .nav a{display:inline-block; margin:4px 12px 0 0}
+}
