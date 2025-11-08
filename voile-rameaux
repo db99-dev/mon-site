@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Voile Rameaux — NORÉA</title>
+  <meta name="description" content="Voile Rameaux — drapé maîtrisé, broderie discrète, matière douce et opaque." />
+  <link rel="icon" href="/favicon.ico?v=8">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.css" />
+  <script async src="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html" class="brand">NORÉA</a>
+  <nav class="main-nav">
+    <a href="index.html">Accueil</a>
+    <a href="boutique.html" class="active">Boutique</a>
+    <a href="lookbook.html">Lookbook</a>
+    <a href="apropos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="#" class="snipcart-checkout">Panier</a>
+  </nav>
+</header>
+
+<main class="container section product-page">
+  <div class="product-hero">
+    <img src="assets/voile.PNG" alt="Voile Rameaux — NORÉA" loading="eager">
+  </div>
+
+  <div class="product-details">
+    <h1>Voile Rameaux</h1>
+    <p class="price big">25,00 €</p>
+
+    <form class="buy">
+      <label for="couleur">Couleur</label>
+      <select id="couleur" class="select">
+        <option>Noir</option>
+      </select>
+
+      <button class="btn snipcart-add-item"
+        data-item-id="voile-rameaux"
+        data-item-name="Voile Rameaux"
+        data-item-price="25.00"
+        data-item-url="/voile-rameaux.html"
+        data-item-description="Voile drapé, ligne épurée, détail brodé discret. Matière douce et opaque."
+        data-item-image="/assets/voile.PNG"
+        data-item-custom1-name="Couleur"
+        data-item-custom1-options="Noir"
+        data-item-custom1-value="Noir">
+        Ajouter au panier
+      </button>
+    </form>
+
+    <div class="prose">
+      <h2>Détails</h2>
+      <ul>
+        <li>Drapé fluide, tombé léger</li>
+        <li>Opacité maîtrisée</li>
+        <li>Finition brodée discrète</li>
+      </ul>
+
+      <h2>Conseils</h2>
+      <p>S’agence naturellement avec l’Abaya Lina pour une silhouette NORÉA complète.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer"><p>© NORÉA — Maison de couture pudique</p></footer>
+<div hidden id="snipcart" data-api-key="N2M3N2Y0ZDYtZjY2MC00MjhjLTllY2UtM2U3ZDUzZDI5YjE3NjM4OTc1NDg3NDgyNjUxMzU5"></div>
+</body>
+</html>
