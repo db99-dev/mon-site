@@ -1,116 +1,192 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>NORÉA — Maison de voiles & abayas premium</title>
-  <meta name="description" content="Abayas & voiles premium — élégance & pudeur.">
+  <meta name="description" content="NORÉA : abayas & voiles premium. Luxe discret, élégance & pudeur." />
 
-  <link rel="canonical" href="https://maison-norea.fr/" />
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico?v=8" />
+  <link rel="shortcut icon" href="favicon.ico?v=8" />
+  <link rel="apple-touch-icon" href="assets/favicon.png?v=8" />
 
-  <link rel="preconnect" href="https://cdn.snipcart.com" />
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.css" />
 
-  <link rel="icon" href="/favicon.ico" />
+  <!-- Snipcart (panier) -->
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.css" />
+  <script async src="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.js"></script>
 </head>
 
 <body>
-
-<!-- HEADER -->
-<header class="norea-header">
-  <div class="container header-bar">
-    <a href="index.html" class="brand">NORÉA</a>
-
-    <nav class="nav">
-      <a href="index.html">Accueil</a>
-      <a href="boutique.html">Boutique</a>
-      <a href="lookbook.html">Lookbook</a>
-      <a href="a-propos.html">À propos</a>
-      <a href="contact.html">Contact</a>
-      <a href="#" class="snipcart-checkout">Panier</a>
-    </nav>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="container hero-center">
-    <h1>NORÉA</h1>
-    <p>Abayas & voiles premium — élégance & pudeur.</p>
-    <a href="boutique.html" class="btn">Voir la collection</a>
-  </div>
-</section>
-
-<!-- VALEURS -->
-<section class="values">
-  <div class="container values-grid">
-
-    <div>
-      <h3>Élégance</h3>
-      <p>Luxe discret, lignes maîtrisées, matière noble.</p>
+  <!-- HEADER (sticky) -->
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="index.html">NORÉA</a>
+      <nav class="nav">
+        <a href="index.html">Accueil</a>
+        <a href="boutique.html">Boutique</a>
+        <a href="lookbook.html">Lookbook</a>
+        <a href="apropos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+        <button class="btn-cart snipcart-checkout" aria-label="Ouvrir le panier">Panier</button>
+      </nav>
     </div>
+  </header>
 
-    <div>
-      <h3>Pudeur</h3>
-      <p>Une beauté qui se protège. Un style affirmé.</p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <h1>NORÉA</h1>
+      <p>Abayas & voiles premium — élégance & pudeur.</p>
+      <a class="btn-primary" href="boutique.html">Voir la collection</a>
     </div>
+  </section>
 
-    <div>
-      <h3>Héritage</h3>
-      <p>Un vêtement qui relie le cœur, le corps et la foi.</p>
+  <!-- MINI VALEURS -->
+  <section class="values">
+    <div class="container values-grid">
+      <div>
+        <h3>Élégance</h3>
+        <p>Luxe discret, lignes maîtrisées, matière noble.</p>
+      </div>
+      <div>
+        <h3>Pudeur</h3>
+        <p>Une beauté qui se protège, un style qui s’affirme.</p>
+      </div>
+      <div>
+        <h3>Héritage</h3>
+        <p>Un vêtement qui relie le cœur, le corps et la foi.</p>
+      </div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- APERÇU PRODUITS -->
+  <section class="products">
+    <div class="container">
+      <h2>Nos produits</h2>
+      <div class="grid-3">
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container footer-grid">
+        <!-- Abaya Lina -->
+        <article class="product">
+          <figure class="p-media">
+            <img src="assets/abaya.PNG" alt="Abaya Lina — NORÉA" loading="lazy" />
+          </figure>
+          <div class="p-body">
+            <h3>Abaya Lina</h3>
+            <p class="price">70,00 €</p>
 
-    <div>
-      <h4>À propos</h4>
-      <p>NORÉA est une maison dédiée à la mode pudique : abayas & voiles premium.</p>
+            <label class="opt">
+              <span>Taille</span>
+              <select id="abaya-taille">
+                <option>XS</option><option>S</option><option>M</option>
+                <option>L</option><option>XL</option>
+              </select>
+            </label>
+
+            <button
+              class="btn-primary snipcart-add-item"
+              data-item-id="abaya-lina"
+              data-item-name="Abaya Lina"
+              data-item-price="70.00"
+              data-item-url="https://maison-norea.fr/boutique.html"
+              data-item-description="Abaya fluide, opaque et élégante. Coupe droite, tissu doux et confortable."
+              data-item-image="https://maison-norea.fr/assets/abaya.PNG"
+              data-item-custom1-name="Taille"
+              data-item-custom1-options="XS|S|M|L|XL"
+              data-item-custom1-value="XS"
+            >
+              Ajouter au panier
+            </button>
+          </div>
+        </article>
+
+        <!-- Voile Rameaux -->
+        <article class="product">
+          <figure class="p-media">
+            <img src="assets/voile.PNG" alt="Voile Rameaux — NORÉA" loading="lazy" />
+          </figure>
+          <div class="p-body">
+            <h3>Voile Rameaux</h3>
+            <p class="price">25,00 €</p>
+
+            <label class="opt">
+              <span>Couleur</span>
+              <select id="voile-couleur">
+                <option>Noir</option>
+              </select>
+            </label>
+
+            <button
+              class="btn-primary snipcart-add-item"
+              data-item-id="voile-rameaux"
+              data-item-name="Voile Rameaux"
+              data-item-price="25.00"
+              data-item-url="https://maison-norea.fr/boutique.html"
+              data-item-description="Voile opaque et léger, finition perles ton sur ton."
+              data-item-image="https://maison-norea.fr/assets/voile.PNG"
+              data-item-custom1-name="Couleur"
+              data-item-custom1-options="Noir"
+              data-item-custom1-value="Noir"
+            >
+              Ajouter au panier
+            </button>
+          </div>
+        </article>
+
+        <!-- Sac Sélène -->
+        <article class="product">
+          <figure class="p-media">
+            <img src="assets/sac.PNG" alt="Sac Sélène — NORÉA" loading="lazy" />
+          </figure>
+          <div class="p-body">
+            <h3>Sac Sélène</h3>
+            <p class="price">50,00 €</p>
+
+            <button
+              class="btn-primary snipcart-add-item"
+              data-item-id="sac-selene"
+              data-item-name="Sac Sélène"
+              data-item-price="50.00"
+              data-item-url="https://maison-norea.fr/boutique.html"
+              data-item-description="Sac bandoulière minimaliste, bijouterie or doux."
+              data-item-image="https://maison-norea.fr/assets/sac.PNG"
+            >
+              Ajouter au panier
+            </button>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="shipping-note">
+        Livraison Mondial Relay offerte dès 59€ — Colissimo domicile disponible.
+      </p>
     </div>
+  </section>
 
-    <div>
-      <h4>FAQ</h4>
-      <ul class="list-links">
-        <li><a href="livraison.html">Délais de livraison</a></li>
-        <li><a href="retours.html">Retours</a></li>
-        <li><a href="mentions-legales.html">Mentions légales</a></li>
-      </ul>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p>© NORÉA — Maison de couture pudique</p>
+      <nav class="footer-links">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Confidentialité</a>
+        <a href="cgv.html">CGV</a>
+        <a href="livraison.html">Livraison</a>
+        <a href="retours.html">Retours</a>
+      </nav>
     </div>
+  </footer>
 
-    <div>
-      <h4>Contact</h4>
-      <ul class="list-links">
-        <li>Email : <a href="mailto:norea.pro@hotmail.com">norea.pro@hotmail.com</a></li>
-        <li>Instagram : <a href="https://instagram.com/maison.norea" target="_blank">@maison.norea</a></li>
-        <li>Téléphone : <a href="tel:+33698234296">+33 6 98 23 42 96</a></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div class="container footer-bottom">
-    <nav class="footer-links">
-      <a href="mentions-legales.html">Mentions légales</a>
-      <a href="cgv.html">CGV</a>
-      <a href="confidentialite.html">Politique de confidentialité</a>
-      <a href="livraison.html">Livraison</a>
-      <a href="retours.html">Retours</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <p>© NORÉA — Maison de couture pudique</p>
-  </div>
-</footer>
-
-<!-- SNIPCART -->
-<script async src="https://cdn.snipcart.com/themes/v3.6.0/default/snipcart.js"></script>
-<div hidden id="snipcart" data-api-key="N2M3N2Y0ZDYtZjY2MC00MjhjLTllY2UtM2U3ZDUzZDI5YjE3NjM4OTc1NDg3NDgyNjUxMzU5"></div>
-
+  <!-- Snipcart hidden div (clé test) -->
+  <div
+    hidden
+    id="snipcart"
+    data-api-key="N2M3N2Y0ZDYtZjY2MC00MjhjLTllY2UtM2U3ZDUzZDI5YjE3NjM4OTc1NDg3NDgyNjUxMzU5"
+    data-config-add-product-behavior="none"
+    data-config-modal-style="side"
+  ></div>
 </body>
 </html>
